@@ -1,0 +1,9 @@
+[alias]
+	lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+	pb = push origin HEAD
+	diffp = diff HEAD~1 HEAD
+[user]
+	name = XXX
+	email = XXX
+[core]
+	editor = /usr/local/bin/vim

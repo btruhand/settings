@@ -13,6 +13,8 @@
   },
   "extends": "eslint:recommended",
   "rules": {
+    "no-unreachable": "error",
+    "semi": ["error", "always"],
     "curly": "error",
     "no-alert": "error",
     "indent": ["error", 2, { 

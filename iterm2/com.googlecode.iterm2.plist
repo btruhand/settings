@@ -62,10 +62,12 @@
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>556 143 581 362 0 0 1440 877 </string>
+	<key>NSWindow Frame ProfilesPanel</key>
+	<string>205 478 735 382 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>312 207 796 473 0 0 1440 877 </string>
+	<string>312 171 796 473 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 470 570 399 0 0 1440 877 </string>
+	<string>5 412 652 450 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 489 570 399 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -234,6 +236,8 @@
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
+			<key>Blend</key>
+			<real>0.050000000000000003</real>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -278,7 +282,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>No</string>
+			<string>Recycle</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -726,7 +730,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.24393028846153847</real>
+			<real>0.17316013313609466</real>
 			<key>Triggers</key>
 			<array>
 				<dict>
@@ -738,6 +742,16 @@
 					<true/>
 					<key>regex</key>
 					<string>.*(p|P)assword\s*:\s*</string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>PasswordTrigger</string>
+					<key>parameter</key>
+					<string>Server passwords</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>\[sudo\] password.*:\s*</string>
 				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
@@ -760,12 +774,14 @@
 			<string>/Users/btara.truhandarien</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>5A176F3D-AEA8-4019-B56B-8C347367EC73</string>
 	<key>NoSyncLastTipTime</key>
-	<real>522506057.87166399</real>
+	<real>522603202.26167601</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -781,6 +797,7 @@
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
+		<string>0000</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -830,7 +847,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-23T12:34:16Z</date>
+	<date>2017-07-25T01:24:59Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -838,7 +855,7 @@
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SplitPaneDimmingAmount</key>
-	<real>0.38217648237179491</real>
+	<real>0.10000000000000001</real>
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabViewType</key>

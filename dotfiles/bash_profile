@@ -51,10 +51,12 @@ edit_dotfile () {
 }
 git_settings () {
 	commit_msg="$1"
+	ori_loc=$(pwd)
 	cd $SETTINGS_DIR
 	git add .
 	git commit -m "$commit_msg"
-	git pb	
+	git pb
+	cd $ori_loc
 }
 make_jsctags () {
 	find . -type f -iregex ".*\.js$" -not -path "*/node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags

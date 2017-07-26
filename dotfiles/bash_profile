@@ -1,5 +1,6 @@
 export CODE_DIR=~/Code
-export DOTFILES_DIR=$CODE_DIR/settings/dotfiles
+export SETTINGS_DIR=$CODE_DIR/settings
+export DOTFILES_DIR=$SETTINGS_DIR/dotfiles
 
 if [ -f ~/.profile ]; then
 	source ~/.profile
@@ -33,11 +34,27 @@ source_dotfile () {
 	cp_dotfile $1
 	source ~/.$1
 }
+cp_to_settings() {
+	cp $2 $SETTINGS_DIR/$1
+}
+cp_from_settings() {
+	cp $SETTINGS_DIR/$1 $2
+}
 cp_dotfile () {
-	cp $DOTFILES_DIR/$1 ~/.$1
+	cp_from_settings dotfiles/$1 ~/.$1
+}
+edit_setfile () {
+	vim $SETTINGS_DIR/$1
 }
 edit_dotfile () {
 	vim $DOTFILES_DIR/$1
+}
+git_settings () {
+	commit_msg="$1"
+	cd $SETTINGS_DIR
+	git add .
+	git commit -m "$commit_msg"
+	git pb	
 }
 make_jsctags () {
 	find . -type f -iregex ".*\.js$" -not -path "*/node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
@@ -80,8 +97,12 @@ alias tagtest='git_tag test_Btara'
 alias tagrelease='git_tag release'
 alias so='cp_dotfile bash_profile && source ~/.bash_profile'
 alias se='edit_dotfile bash_profile'
+alias sete=edit_setfile
 alias dote=edit_dotfile
 alias dotcp=cp_dotfile
+alias setcpto=cp_to_to
+alias setcpfrom=cp_to_from
+alias gitset=git_settings
 alias dotso=source_dotfile
 alias mkjstags=make_jsctags
 alias upload=up_files
@@ -101,7 +122,7 @@ NPM_PACKAGES="${HOME}/.npm-packages"
 # n setup
 export N_PREFIX=$NPM_PACKAGES
 
-export PATH="$NPM_PACKAGES/bin:/usr/local/sbin:/usr/local/Cellar:$PATH"
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$NPM_PACKAGES/bin:/usr/local/sbin:/usr/local/Cellar:$PATH"
 export GRAPHVIZ_DOT="/usr/local/bin/dot"
 
 LC_ALL=en_us.UTF-8

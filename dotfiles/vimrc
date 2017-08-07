@@ -49,10 +49,9 @@ set encoding=utf-8
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2 
 autocmd FileType css setlocal tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType xml setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab

@@ -46,7 +46,7 @@ autocmd FileType * setlocal formatoptions-=cr
 set fileencodings=utf-8,iso-2022-jp,euc-jp,cp932,default,latin1
 set encoding=utf-8
 " Tabs
-autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2 

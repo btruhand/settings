@@ -65,9 +65,9 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>205 478 735 382 0 0 1440 900 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>312 171 796 473 0 0 1440 877 </string>
+	<string>312 121 918 512 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>5 412 652 450 0 0 1440 877 </string>
+	<string>5 295 652 450 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 489 570 399 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -741,7 +741,7 @@
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
-					<string>.*(p|P)assword\s*:\s*</string>
+					<string>.*(p|P)assword\s*:\s*$</string>
 				</dict>
 				<dict>
 					<key>action</key>
@@ -751,7 +751,7 @@
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
-					<string>\[sudo\] password.*:\s*</string>
+					<string>^\[sudo\] password.*:\s*</string>
 				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
@@ -781,7 +781,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>5A176F3D-AEA8-4019-B56B-8C347367EC73</string>
 	<key>NoSyncLastTipTime</key>
-	<real>522603202.26167601</real>
+	<real>523499367.71942598</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -798,6 +798,14 @@
 	<array>
 		<string>000</string>
 		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -847,7 +855,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-07-25T01:24:59Z</date>
+	<date>2017-08-02T03:49:55Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

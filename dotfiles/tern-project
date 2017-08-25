@@ -5,6 +5,7 @@
 	],
 	"plugins": {
 		"node": {},
-		"string_completion": {}
-	}
+		"string_completion": {},
+	},
+	"ecmaVersion": 6,
 }

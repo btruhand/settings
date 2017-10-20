@@ -1,0 +1,6 @@
+--recurse=yes
+--tag-relative=no
+--fields=+alSnk
+
+# PHP
+--PHP-kinds=+cfind-lva

@@ -25,6 +25,9 @@ set hlsearch
 set incsearch
 set showmatch
 
+set wrap linebreak nolist
+set showbreak=>\ \ \
+
 " Rolodex Vim
 function! ToggleMaxWins()
 	if exists('g:windowMax')
@@ -49,7 +52,7 @@ set encoding=utf-8
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2 
+autocmd FileType python setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType css setlocal tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -58,8 +61,13 @@ autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType uml setlocal tabstop=2 shiftwidht=2 softtabstop=2 expandtab
+autocmd FileType uml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType ctp setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead,BufNewFile *.jade set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
+" Automatically remove trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
 " Stop backup
 set nobackup
 
@@ -67,7 +75,7 @@ set nobackup
 set clipboard=unnamed
 
 " Set statusline
-set statusline+=%f
+set statusline=%f:column\ %c
 
 set tags=./tags,tags;
 
@@ -105,6 +113,15 @@ nnoremap <Leader>f :CtrlP<CR>
 nnoremap <C-f> <C-]>
 nnoremap <C-c> <C-t>
 nnoremap <Leader>s :tselect<CR>
+
+vnoremap <C-j> gj
+vnoremap <C-k> gk
+vnoremap <Leader>4 g$
+vnoremap <Leader>0 g^
+nnoremap <C-j> gj
+nnoremap <C-k> gk
+nnoremap <Leader>4 g$
+nnoremap <Leader>0 g^
 
 " PHPCOMPLETE.VIM
 let g:phpcomplete_parse_docblock_comments = 1
@@ -284,3 +301,8 @@ augroup phpSyntaxOverride
   autocmd!
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+" YCM settings
+let g:ycm_min_num_identifier_candidate_chars = 5
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_max_num_candidates=20

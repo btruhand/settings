@@ -62,7 +62,7 @@ make_jsctags () {
 	find . -type f -iregex ".*\.js$" -not -path "*/node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
 }
 up_files () {
-	scp "$@" truhandarien01@loginjp101z.prod.jp.local:~/
+	scp "$@" truhandarien01@loginjpe1101z.prod.jp.local:~/
 }
 down_files () {
 	dir=$1

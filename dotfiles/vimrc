@@ -1,3 +1,4 @@
+set encoding=utf-8
 scriptencoding utf-8
 
 """""""""""""""""""""
@@ -146,7 +147,16 @@ let g:syntastic_check_on_wq = 0
 
 " syntax checkers
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_php_checkers = ['php']
+let g:syntastic_php_checkers = ['php','phpcs']
+let g:syntastic_php_phpcs_args = "-s --encoding=utf-8 --severity=1"
+let g:syntastic_aggregate_errors = 1
+
+if emoji#available()
+  let g:syntastic_error_symbol = emoji#for('boom')
+  let g:syntastic_style_error_symbol = emoji#for('dizzy_face')
+  let g:syntastic_warning_symbol = emoji#for('mask')
+  let g:syntastic_style_warning_symbol = emoji#for('neutral_face')
+endif
 
 let g:php_syntax_extensions_enabled = ["core","date","curl","dom","json","mbstring","iconv","pdo","spl","reflection","standard","hash","tokenizer","bcmath"]
 
@@ -274,6 +284,7 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'aklt/plantuml-syntax'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'junegunn/vim-emoji'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

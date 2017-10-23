@@ -45,6 +45,9 @@ cp_from_settings() {
 cp_dotfile () {
 	cp_from_settings dotfiles/$1 ~/.$1
 }
+cp_config () {
+	cp_from_settings configurations/$1 ~/
+}
 edit_setfile () {
 	vim $SETTINGS_DIR/$1
 }
@@ -116,6 +119,7 @@ alias uml=uml_diagram
 alias prename=partial_rename_files
 alias ll='ls -a'
 alias phpctags='php ~/Code/tools/phpctags'
+alias cpconf=cp_config
 
 # some PHP/Apache things
 alias apache='apachectl'

@@ -5,7 +5,7 @@
 	co = checkout
 	br = branch
 [user]
-	name = XXX
-	email = XXX
+	name = Btara Truhandarien
+	email = btara.truhandarien@gmail.com
 [core]
 	editor = /usr/local/bin/vim

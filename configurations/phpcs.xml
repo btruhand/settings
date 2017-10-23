@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ruleset name="PHP_CodeSniffer">
+ <description>Standard PHP CodeSniffer Settings</description>
+
+ <file>src</file>
+ <file>tests</file>
+
+ <exclude-pattern>*/vendor/*,*/lib/Cake/*</exclude-pattern>
+
+ <arg name="extensions" value="php"/>
+ <arg name="colors" />
+ <arg name="parallel" value="25" />
+ <arg value="svp"/>
+
+ <config name="severity" value="1"/>
+ <config name="tab_width" value="4"/>
+ <config name="php_version" value="50610"/>
+
+ <!-- Don't hide tokenizer exceptions -->
+ <rule ref="Internal.Tokenizer.Exception">
+  <type>error</type>
+ </rule>
+
+ <!-- Include the whole PSR2 standard except some -->
+ <rule ref="PSR2">
+    <exclude name="PSR2.Files.EndFileNewline" />
+    <exclude name="PSR1.Classes.ClassDeclaration"/>
+    <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+ </rule>
+
+ <rule ref="Generic.NamingConventions.CamelCapsFunctionName"/>
+ <rule ref="Generic.PHP.DeprecatedFunctions"/>
+ <rule ref="Generic.Commenting.DocComment"/>
+ <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+
+ <!-- Have 12 chars padding maximum and always show as errors -->
+ <rule ref="Generic.Formatting.MultipleStatementAlignment">
+  <properties>
+   <property name="maxPadding" value="12"/>
+   <property name="error" value="true"/>
+  </properties>
+ </rule>
+</ruleset>

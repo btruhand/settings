@@ -17,7 +17,7 @@
     "semi": ["error", "always"],
     "curly": "error",
     "no-alert": "error",
-    "indent": ["error", 2, { 
+    "indent": ["error", 2, {
       "VariableDeclarator": 2
     }],
     "no-unused-expressions": ["error", {

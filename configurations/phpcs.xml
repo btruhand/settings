@@ -26,6 +26,7 @@
     <exclude name="PSR2.Files.EndFileNewline" />
     <exclude name="PSR1.Classes.ClassDeclaration"/>
     <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+    <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed"/>
  </rule>
 
  <rule ref="Generic">

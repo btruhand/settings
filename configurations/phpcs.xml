@@ -23,39 +23,51 @@
 
  <!-- Include the whole PSR2 standard except some -->
  <rule ref="PSR2">
-    <exclude name="PSR2.Files.EndFileNewline" />
-    <exclude name="PSR1.Classes.ClassDeclaration"/>
-    <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
-    <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed"/>
+  <exclude name="PSR2.Files.EndFileNewline" />
+  <exclude name="PSR1.Files.SideEffects.FoundWithSymbols"/>
+  <exclude name="PSR2.ControlStructures.ElseIfDeclaration.NotAllowed"/>
+ </rule>
+
+ <rule ref="PSR1.Classes.ClassDeclaration">
+  <exclude-pattern>*/tests/*</exclude-pattern>
+  <exclude-pattern>*/Test/*</exclude-pattern>
  </rule>
 
  <rule ref="Generic">
-    <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSame"/>
-    <exclude name="Generic.Commenting.DocComment.SpacingBeforeTags"/>
-    <exclude name="Generic.Commenting.DocComment.NonParamGroup"/>
-    <exclude name="Generic.Commenting.DocComment.TagValueIndent"/>
-    <exclude name="Generic.PHP.ClosingPHPTag.NotFound"/>
-    <exclude name="Generic.Files.LowercasedFilename.NotFound"/>
-    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed"/>
-    <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine"/>
-    <exclude name="Generic.Arrays.DisallowLongArraySyntax.Found"/>
-    <exclude name="Generic.Commenting.DocComment.MissingShort"/>
-    <exclude name="Generic.PHP.UpperCaseConstant.Found"/>
-    <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine"/>
-    <exclude name="Generic.Files.EndFileNoNewline.Found"/>
-    <exclude name="Generic.Formatting.SpaceAfterNot.Incorrect"/>
-    <exclude name="Generic.Commenting.DocComment.ParamGroup"/>
-    <exclude name="Generic.Formatting.NoSpaceAfterCast.SpaceFound"/>
-    <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
-    <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
-    <exclude name="Generic.Strings.UnnecessaryStringConcat.Found"/>
+  <exclude name="Generic.Formatting.MultipleStatementAlignment.NotSame"/>
+  <exclude name="Generic.Commenting.DocComment.SpacingBeforeTags"/>
+  <exclude name="Generic.Commenting.DocComment.NonParamGroup"/>
+  <exclude name="Generic.Commenting.DocComment.TagValueIndent"/>
+  <exclude name="Generic.PHP.ClosingPHPTag.NotFound"/>
+  <exclude name="Generic.Files.LowercasedFilename.NotFound"/>
+  <exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed"/>
+  <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie.BraceOnNewLine"/>
+  <exclude name="Generic.Arrays.DisallowLongArraySyntax.Found"/>
+  <exclude name="Generic.Commenting.DocComment.MissingShort"/>
+  <exclude name="Generic.PHP.UpperCaseConstant.Found"/>
+  <exclude name="Generic.Classes.OpeningBraceSameLine.BraceOnNewLine"/>
+  <exclude name="Generic.Files.EndFileNoNewline.Found"/>
+  <exclude name="Generic.Formatting.SpaceAfterNot.Incorrect"/>
+  <exclude name="Generic.Commenting.DocComment.ParamGroup"/>
+  <exclude name="Generic.Formatting.NoSpaceAfterCast.SpaceFound"/>
+  <exclude name="Generic.Arrays.DisallowShortArraySyntax.Found"/>
+  <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman.BraceOnSameLine"/>
+  <exclude name="Generic.Strings.UnnecessaryStringConcat.Found"/>
+  <exclude name="Generic.Formatting.MultipleStatementAlignment"/>
+  <exclude name="Generic.CodeAnalysis.AssignmentInCondition.Found"/>
  </rule>
 
- <!-- Have 12 chars padding maximum and always show as errors -->
- <rule ref="Generic.Formatting.MultipleStatementAlignment">
-  <properties>
-   <property name="maxPadding" value="12"/>
-   <property name="error" value="true"/>
-  </properties>
+ <rule ref="Generic.Metrics.CyclomaticComplexity">
+   <properties>
+     <property name="complexity" value="15" />
+     <property name="absoluteComplexity" value="25" />
+   </properties>
+ </rule>
+
+ <rule ref="Squiz.Strings.ConcatenationSpacing">
+   <properties>
+     <property name="spacing" value="1"/>
+     <property name="ignoreNewlines" value="true"/>
+   </properties>
  </rule>
 </ruleset>

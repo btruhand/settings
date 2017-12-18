@@ -75,13 +75,13 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>205 478 735 382 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1970 467 620 392 1440 -26 1680 1050 </string>
+	<string>1970 450 620 392 1440 -26 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1786 159 606 469 1440 -26 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>613 477 918 394 0 0 1440 900 </string>
+	<string>1821 307 918 512 1440 -150 1400 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1542 99 652 452 1440 -26 1680 1027 </string>
+	<string>0 0 1356 868 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 489 570 399 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -751,7 +751,7 @@
 					<key>action</key>
 					<string>PasswordTrigger</string>
 					<key>parameter</key>
-					<string>Server passwords</string>
+					<string>Server password</string>
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
@@ -761,7 +761,7 @@
 					<key>action</key>
 					<string>PasswordTrigger</string>
 					<key>parameter</key>
-					<string>Server passwords</string>
+					<string>Server password</string>
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
@@ -1498,7 +1498,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>5A176F3D-AEA8-4019-B56B-8C347367EC73</string>
 	<key>NoSyncLastTipTime</key>
-	<real>530072976.99795997</real>
+	<real>531105220.929506</real>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1577,6 +1577,15 @@
 		<string>0060</string>
 		<string>0061</string>
 		<string>0062</string>
+		<string>0063</string>
+		<string>0064</string>
+		<string>0065</string>
+		<string>0066</string>
+		<string>0067</string>
+		<string>0068</string>
+		<string>0069</string>
+		<string>0070</string>
+		<string>0071</string>
 	</array>
 	<key>PointerActions</key>
 	<dict>
@@ -1617,6 +1626,8 @@
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>SUAutomaticallyUpdate</key>
+	<false/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1626,7 +1637,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-19T07:01:02Z</date>
+	<date>2017-12-08T05:05:52Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -1646,7 +1657,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.2</string>
+	<string>3.1.5</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

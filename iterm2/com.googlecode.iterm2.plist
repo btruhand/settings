@@ -31,9 +31,11 @@
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/Code/settings/iterm2</string>
+	<string>~</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 448}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -73,15 +75,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>639 50 581 228 0 0 1440 900 </string>
 	<key>NSWindow Frame ProfilesPanel</key>
-	<string>205 478 735 382 0 0 1440 900 </string>
+	<string>1715 590 735 382 1440 -26 1680 1050 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1970 450 620 392 1440 -26 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1786 159 606 469 1440 -26 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1821 307 918 512 1440 -150 1400 1050 </string>
+	<string>1998 198 918 512 1440 -26 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1356 868 0 0 1440 877 </string>
+	<string>1440 99 652 452 1440 -26 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 489 570 399 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -1505,6 +1507,11 @@
 	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
+	<key>NoSyncSavePanelSavedSettings_StartSessionLog</key>
+	<dict>
+		<key>Initial Directory</key>
+		<string>/Users/btara.truhandarien</string>
+	</dict>
 	<key>NoSyncSuppressBroadcastInputWarning</key>
 	<true/>
 	<key>NoSyncSuppressBroadcastInputWarning_selection</key>
@@ -1587,6 +1594,8 @@
 		<string>0070</string>
 		<string>0071</string>
 	</array>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1637,7 +1646,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-12-08T05:05:52Z</date>
+	<date>2018-02-09T02:15:25Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

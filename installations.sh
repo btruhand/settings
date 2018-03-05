@@ -1,13 +1,22 @@
 #!/bin/bash
 
 mkdir -p ~/Code/
-git clone https://github.com/btruhand/settings.git ~/Code/
+[ ! -e ~/Code/settings ] && cp -R $(dirname) ~/Code/settings
+
+# iterm2
+## Specify the preferences directory
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Code/settings/iterm2"
+## Tell iTerm2 to use the custom preferences in the directory
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+
+# git aware prompt
+[ ! -e ~/Code/git-aware-prompt ] && git clone https://github.com/btruhand/git-aware-prompt.git ~/Code/git-aware-prompt
 
 # prepare npm-packages folder
-mkdir ~/.npm-packages
+mkdir -p ~/.npm-packages
 # initialize bash profile
-cp ~/Code/settings/dotfiles/bash_profile .bash_profile
-. .bash_profile
+cp ~/Code/settings/dotfiles/bash_profile ~/.bash_profile
+source ~/.bash_profile
 
 # Copy bashrc
 dotcp bashrc

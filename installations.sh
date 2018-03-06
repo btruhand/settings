@@ -1,5 +1,7 @@
 #!/bin/bash
 
+shopt -s expand_aliases
+
 mkdir -p ~/Code/
 [ ! -e ~/Code/settings ] && cp -R $(dirname) ~/Code/settings
 

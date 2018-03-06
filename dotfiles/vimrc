@@ -153,13 +153,6 @@ let g:syntastic_php_checkers = ['php','phpcs']
 let g:syntastic_php_phpcs_args = "-s --encoding=utf-8 --severity=1"
 let g:syntastic_aggregate_errors = 1
 
-if emoji#available()
-  let g:syntastic_error_symbol = emoji#for('boom')
-  let g:syntastic_style_error_symbol = emoji#for('dizzy_face')
-  let g:syntastic_warning_symbol = emoji#for('mask')
-  let g:syntastic_style_warning_symbol = emoji#for('neutral_face')
-endif
-
 let g:php_syntax_extensions_enabled = ["core","date","curl","dom","json","mbstring","iconv","pdo","spl","reflection","standard","hash","tokenizer","bcmath"]
 
 " CtrlP
@@ -427,3 +420,10 @@ function! LightlineFugitive()
   endtry
   return ''
 endfunction
+
+if emoji#available()
+  let g:syntastic_error_symbol = emoji#for('boom')
+  let g:syntastic_style_error_symbol = emoji#for('dizzy_face')
+  let g:syntastic_warning_symbol = emoji#for('mask')
+  let g:syntastic_style_warning_symbol = emoji#for('neutral_face')
+endif

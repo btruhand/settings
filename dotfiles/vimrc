@@ -12,7 +12,7 @@ set number
 if !has('gui_running')
 	set t_Co=256
 endif
-colors stereokai
+colors iceberg
 
 " LEADER
 let mapleader = "."
@@ -28,8 +28,14 @@ set hlsearch
 set incsearch
 set showmatch
 
+" line wrapping settings
 set wrap linebreak nolist
-set showbreak=>\ \ \
+set showbreak=↳\
+set textwidth=0
+set wrapmargin=0
+
+" conceal level
+set conceallevel=2
 
 " Rolodex Vim
 function! ToggleMaxWins()
@@ -69,6 +75,23 @@ autocmd FileType uml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ctp setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd BufRead,BufNewFile *.jade set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType groovy setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+" Markdown settings
+autocmd BufNewFile,BufReadPost *.{md,mdown,mkd,mkdn,markdown,mdwn} set filetype=markdown
+autocmd FileType markdown setlocal spell
+" Treat certain languages
+let g:vim_markdown_fenced_langauges = ['bash=sh']
+
+" folding
+let g:markdown_folding = 1
+" Set header folding level
+let g:vim_markdown_folding_level = 1
+" Set the number of spaces of indent
+let g:vim_markdown_new_list_item_indent = 1
+" Enable TOC window auto-fit
+let g:vim_markdown_toc_autofit = 1
+" Highlight YAML front matter as used by Jekyll or Hugo.
+let g:vim_markdown_frontmatter = 1
 
 " Automatically remove trailing whitespace
 autocmd BufWritePre * %s/\s\+$//e
@@ -117,16 +140,13 @@ nnoremap <Leader>f :CtrlP<CR>
 " CTAGS RELATED
 nnoremap <C-f> <C-]>
 nnoremap <C-c> <C-t>
-nnoremap <Leader>s :tselect<CR>
+nnoremap <Leader>s :tselect
 
-vnoremap <C-j> gj
-vnoremap <C-k> gk
+" Line movement (especially for linebreaks)
 vnoremap <Leader>4 g$
 vnoremap <Leader>0 g^
 nnoremap <C-j> gj
 nnoremap <C-k> gk
-nnoremap <Leader>4 g$
-nnoremap <Leader>0 g^
 
 """""""""""""""""""""
 
@@ -295,9 +315,8 @@ filetype plugin indent on    " required
 if !exists("g:syntax_on")
 	syntax enable
 endif
-syntax enable
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+filetype plugin on
 "
 " Brief help
 " :PluginList       - lists configured plugins

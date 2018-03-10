@@ -56,7 +56,7 @@ rm -rf ~/.vim/stereokai
 
 ### iceberg
 git clone https://github.com/cocopon/iceberg.vim.git ~/.vim/iceberg
-cp -r ~/.vim/stereokai/colors/iceberg.vim ~/.vim/colors/
+cp -r ~/.vim/iceberg/colors/iceberg.vim ~/.vim/colors/
 rm -rf ~/.vim/iceberg
 
 ## Install vim plugins

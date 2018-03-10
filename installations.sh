@@ -45,11 +45,20 @@ npm install -g jsctags
 brew install python3
 # Install vim
 brew install vim --with-override-system-vi
-## Install stereokai color scheme
-mkdir ~/.vim/colors
+
+## Install various color schemes
+mkdir -p ~/.vim/colors
+
+### stereokai
 git clone https://github.com/gummesson/stereokai.vim.git ~/.vim/stereokai
 cp -r ~/.vim/stereokai/colors/stereokai.vim ~/.vim/colors/
 rm -rf ~/.vim/stereokai
+
+### iceberg
+git clone https://github.com/cocopon/iceberg.vim.git ~/.vim/iceberg
+cp -r ~/.vim/stereokai/colors/iceberg.vim ~/.vim/colors/
+rm -rf ~/.vim/iceberg
+
 ## Install vim plugins
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall

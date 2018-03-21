@@ -11,6 +11,9 @@ defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Code/set
 ## Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
+# Turn off accented marks
+defaults write -g ApplePressAndHoldEnabled -bool false
+
 # git aware prompt
 [ ! -e ~/Code/git-aware-prompt ] && git clone https://github.com/btruhand/git-aware-prompt.git ~/Code/git-aware-prompt
 

@@ -91,6 +91,8 @@ partial_rename_files () {
 alias fr=find_replace
 alias gitcob=git_checkout_branch
 alias tagtest='git_tag test_Btara'
+alias tagstg='git_tag release_stg'
+alias tagdev='git_tag release_stg'
 alias tagrelease='git_tag release'
 alias so='cp_dotfile bash_profile && source ~/.bash_profile'
 alias se='edit_dotfile bash_profile'

@@ -82,6 +82,9 @@ autocmd FileType markdown setlocal spell
 " Treat certain languages
 let g:vim_markdown_fenced_langauges = ['bash=sh']
 
+" specific colors
+autocmd FileType php colorscheme stereokai
+
 " folding
 let g:markdown_folding = 1
 " Set header folding level
@@ -301,6 +304,8 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/vim-emoji'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'felixhummel/setcolors.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

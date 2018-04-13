@@ -109,6 +109,7 @@ alias prename=partial_rename_files
 alias ll='ls -a'
 alias phpctags='php ~/Code/tools/phpctags'
 alias cpconf=cp_config
+alias insecurechrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors'
 
 # some PHP/Apache things
 alias apache='apachectl'

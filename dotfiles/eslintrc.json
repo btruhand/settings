@@ -19,7 +19,8 @@
     "curly": "error",
     "no-alert": "error",
     "indent": ["error", 2, {
-      "VariableDeclarator": 2
+      "SwitchCase": 1,
+      "VariableDeclarator": 1
     }],
     "no-unused-expressions": ["error", {
       "allowShortCircuit": false,

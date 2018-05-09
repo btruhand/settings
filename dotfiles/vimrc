@@ -68,7 +68,7 @@ autocmd FileType xml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType json setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType eruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType markdown setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType sh setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType uml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -133,10 +133,6 @@ nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>m :buffers<CR>
 
 nnoremap <Leader>max :call ToggleMaxWins()<CR>
-nnoremap <silent> _ :exe "resize " . (winheight(0) * 9/10)<CR>
-nnoremap <silent> + :exe "resize " . (winheight(0) * 10/9)<CR>
-nnoremap <silent> - :exe "vertical resize " . (winwidth(0) * 9/10)<CR>
-nnoremap <silent> = :exe "vertical resize " . (winwidth(0) * 10/9)<CR>
 
 nnoremap <Leader>f :CtrlP<CR>
 

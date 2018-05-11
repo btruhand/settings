@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# initialize bash profile
+cp ~/Code/settings/dotfiles/bash_profile ~/.bash_profile
+
+# Copy bashrc
+cp ~/Code/settings/dotfiles/bashrc ~/.bashrc
+
+# Copy all remaining dotfiles
+cp ~/Code/settings/dotfiles/ctags ~/.ctags
+cp ~/Code/settings/dotfiles/eslintrc.json ~/.eslintrc.json
+cp ~/Code/settings/dotfiles/gitconfig ~/.gitconfig
+cp ~/Code/settings/dotfiles/npmrc ~/.npmrc
+cp ~/Code/settings/dotfiles/tern-project ~/.tern-project
+cp ~/Code/settings/dotfiles/vimrc ~/.vimrc

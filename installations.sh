@@ -1,119 +1,36 @@
 #!/bin/bash
 
-shopt -s expand_aliases
+INSTALL=$1
 
-mkdir -p ~/Code/
-[ ! -e ~/Code/settings ] && cp -R $(dirname) ~/Code/settings
+VALIDINSTALLSTEPS=('bootstrap' 'provision' 'build-brew' 'build-git' 'build-node' 'build-git' 'build-ruby' 'build-vim' 'security')
 
-# iterm2
-## Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Code/settings/iterm2"
-## Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+is_single_install_valid() {
+  for STEP in "${VALIDINSTALLSTEPS[@]}"; do
+    [[ $STEP == $INSTALL ]] && return 0
+  done
+  return 1
+}
 
-# Turn off accented marks
-defaults write -g ApplePressAndHoldEnabled -bool false
+print_usage() {
+  echo "./installations.sh [script-step]"
+  echo "Arguments:"
+  echo "   script-step    bootstrap, provision, build-brew"
+  echo "                  build-git, build-node, build-ruby, build-vim"
+  echo "                  security"
+  return 1
+}
 
-# git aware prompt
-[ ! -e ~/Code/git-aware-prompt ] && git clone https://github.com/btruhand/git-aware-prompt.git ~/Code/git-aware-prompt
+if [ -z $INSTALL ];
+then
+  INSTALL=( "${VALIDINSTALLSTEPS[@]}" )
+else
+  if ! is_single_install_valid; then
+    print_usage
+    exit 1
+  fi
+  INSTALL=( $INSTALL )
+fi
 
-# prepare npm-packages folder
-mkdir -p ~/.npm-packages
-# initialize bash profile
-cp ~/Code/settings/dotfiles/bash_profile ~/.bash_profile
-source ~/.bash_profile
-
-# Copy bashrc
-dotcp bashrc
-
-# Copy all remaining dotfiles
-dotcp tern-project
-dotcp vimrc
-dotcp eslintrc.json
-dotcp gitconfig
-
-# Install brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-# Install node
-brew install node
-## Install n
-npm install -g n
-## Install latest lts node version
-n lts
-
-# Install jsctags
-npm install -g jsctags
-# Install python3
-brew install python3
-# Install vim
-brew install vim --with-override-system-vi
-
-## Install various color schemes
-mkdir -p ~/.vim/colors
-
-### stereokai
-git clone https://github.com/gummesson/stereokai.vim.git ~/.vim/stereokai
-cp -r ~/.vim/stereokai/colors/stereokai.vim ~/.vim/colors/
-rm -rf ~/.vim/stereokai
-
-### iceberg
-git clone https://github.com/cocopon/iceberg.vim.git ~/.vim/iceberg
-cp -r ~/.vim/iceberg/colors/iceberg.vim ~/.vim/colors/
-rm -rf ~/.vim/iceberg
-
-## Install vim plugins
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-vim +PluginInstall
-
-# Setting up YCM
-## Install cmake
-brew install cmake
-## Install YCM
-~/.vim/bundle/YouCompleteMe/./install.py --tern-completer
-
-
-# Setting up tern_for_vim
-cd ~/.vim/bundle/tern_for_vim/ && npm install
-# Install rbenv
-brew install rbenv
-## Install ruby v2.3.0
-rbenv install 2.3.0
-
-# install bundler and ripper-tags
-rbenv local 2.3.0
-gem install bundler
-gem install ripper-tags
-# install latest git
-brew install git
-
-# install php
-brew tap homebrew/homebrew-php
-
-
-# base
-brew install php56
-
-
-#xedebug
-brew install php56-xdebug
-brew install php56-intl
-brew install php56-mcrypt
-## install phpctags
-curl -Ss http://vim-php.com/phpctags/install/phpctags.phar > ~/Code/tools/phpctags
-
-# install java
-brew cask install java
-
-# install graphviz (mainly for plantuml)
-## Install libtool
-brew install libtool
-## Install graphviz
-brew install graphviz
-
-# brew health checkup
-brew doctor
-
-# make public key
-ssh-keygen -t rsa
-cat ~/.ssh/id_rsa.pub
+for STEP in "${INSTALL[@]}"; do
+  sh ./installers/scripts/$STEP $(pwd)
+done

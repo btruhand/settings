@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# stereokai
+git clone https://github.com/gummesson/stereokai.vim.git ~/.vim/stereokai
+cp -r ~/.vim/stereokai/colors/stereokai.vim ~/.vim/colors/
+rm -rf ~/.vim/stereokai
+
+# iceberg
+git clone https://github.com/cocopon/iceberg.vim.git ~/.vim/iceberg
+cp -r ~/.vim/iceberg/colors/iceberg.vim ~/.vim/colors/
+rm -rf ~/.vim/iceberg
+
+# Install vim plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+vim +PluginInstall
+
+# Setting up YCM
+~/.vim/bundle/YouCompleteMe/./install.py --tern-completer
+
+# Setting up tern_for_vim
+cd ~/.vim/bundle/tern_for_vim/ && npm install
+
+# install phpctags
+curl -Ss http://vim-php.com/phpctags/install/phpctags.phar > ~/Code/tools/phpctags

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# make public key
+ssh-keygen -t rsa -b 2048
+ssh-add

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+## Install n
+npm install -g n
+## Install latest lts node version
+n lts
+
+# Install jsctags
+npm install -g jsctags

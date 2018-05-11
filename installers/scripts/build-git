@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# git aware prompt
+[ ! -e ~/Code/git-aware-prompt ] && git clone https://github.com/btruhand/git-aware-prompt.git ~/Code/git-aware-prompt

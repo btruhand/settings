@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Install ruby v2.3.0
+rbenv install 2.3.0
+
+# install bundler and ripper-tags
+rbenv local 2.3.0
+gem install bundler
+gem install ripper-tags
+# install latest git
+brew install git

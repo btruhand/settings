@@ -1,0 +1,26 @@
+# git aware prompt
+[ ! -e ~/Code/git-aware-prompt ] && git clone https://github.com/btruhand/git-aware-prompt.git ~/Code/git-aware-prompt
+
+# Install brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# base
+brew install php@5.6
+# Install rbenv
+brew install rbenv
+# Install vim
+brew install vim --with-override-system-vi
+# Install python3
+brew install python3
+# Install cmake
+brew install cmake
+# install java
+brew cask install java
+# install graphviz (mainly for plantuml)
+## Install libtool
+brew install libtool
+## Install graphviz
+brew install graphviz
+
+# brew health checkup
+brew doctor

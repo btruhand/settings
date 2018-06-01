@@ -77,13 +77,13 @@
 	<key>NSWindow Frame ProfilesPanel</key>
 	<string>2008 301 735 382 1440 0 1680 1050 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1970 493 620 392 1440 0 1680 1050 </string>
+	<string>1970 518 620 392 1440 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>1786 159 606 469 1440 -26 1680 1050 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1964 276 918 512 1440 0 1680 1050 </string>
+	<string>1964 198 918 512 1440 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1440 125 652 452 1440 0 1680 1027 </string>
+	<string>581 300 652 452 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>176 489 570 399 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
@@ -751,7 +751,9 @@
 			<array>
 				<dict>
 					<key>action</key>
-					<string>StopTrigger</string>
+					<string>PasswordTrigger</string>
+					<key>parameter</key>
+					<string>Server password</string>
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
@@ -1652,7 +1654,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-05-10T01:33:51Z</date>
+	<date>2018-05-18T06:17:20Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SETTINGS_DIR=$(dirname $(dirname $(cd $(dirname $0) && pwd)))
+
 # stereokai
 git clone https://github.com/gummesson/stereokai.vim.git ~/.vim/stereokai
 cp -r ~/.vim/stereokai/colors/stereokai.vim ~/.vim/colors/
@@ -23,3 +25,7 @@ cd ~/.vim/bundle/tern_for_vim/ && npm install
 
 # install phpctags
 curl -Ss http://vim-php.com/phpctags/install/phpctags.phar > ~/Code/tools/phpctags
+
+# put filetype.vim
+echo "Copying filetype.vim to $HOME/.vim"
+cp "$SETTINGS_DIR"/vim/filetype.vim $HOME/.vim/filetype.vim

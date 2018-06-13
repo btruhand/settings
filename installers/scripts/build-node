@@ -1,9 +1,11 @@
 #!/bin/bash
 
-## Install n
-npm install -g n
-## Install latest lts node version
-n lts
+## Install nvm
+[ -d ~/.nvm ] && rm -rf ~/.nvm
+git clone --depth 1 --branch master https://github.com/creationix/nvm.git ~/.nvm
+cd ~/.nvm && . nvm.sh
+
+nvm install --lts
 
 # Install jsctags
 npm install -g jsctags

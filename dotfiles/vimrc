@@ -171,6 +171,11 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_php_checkers = ['php','phpcs']
 let g:syntastic_php_phpcs_args = "-s --encoding=utf-8 --severity=1"
 let g:syntastic_aggregate_errors = 1
+" local eslint executable (to the buffer)
+let b:syntastic_javascript_eslint_exec = '$(npm bin)/eslint'
+" global eslint executable (to the buffer)
+" see :help syntastic-checker-options more
+let g:syntastic_javascript_eslint_exec = '$(npm bin -g)/eslint'
 
 let g:php_syntax_extensions_enabled = ["core","date","curl","dom","json","mbstring","iconv","pdo","spl","reflection","standard","hash","tokenizer","bcmath"]
 

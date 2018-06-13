@@ -9,3 +9,6 @@ nvm install --lts
 
 # Install jsctags
 npm install -g jsctags
+
+# Install eslint
+npm install -g eslint

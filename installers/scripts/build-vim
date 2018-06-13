@@ -18,7 +18,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall
 
 # Setting up YCM
-~/.vim/bundle/YouCompleteMe/./install.py --tern-completer
+~/.vim/bundle/YouCompleteMe/./install.py --tern-completer --clang-completer
 
 # Setting up tern_for_vim
 cd ~/.vim/bundle/tern_for_vim/ && npm install

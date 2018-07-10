@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# assumes pip3 is already available
+pip3 install virtualenv

@@ -129,4 +129,7 @@ export GRAPHVIZ_DOT="/usr/local/bin/dot"
 LC_ALL=en_us.UTF-8
 export LANG="$LC_ALL"
 
+# setting up rbenv
 eval "$(rbenv init -)"
+# setting up direnv
+eval "$(direnv hook bash)"

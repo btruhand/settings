@@ -1,8 +1,9 @@
 # installing go
 
-read -p "Install go? (yes/no/y/n) " should_install_go
+SETTINGS_DIR="$1"
+source "$SETTINGS_DIR/installers/scripts/routines.sh"
 
-if [[ $should_install_go == "yes" || $should_install_go == "y" ]];
+if should "Install go?";
 then
 	read -p "Please open https://golang.org/dl/ and choose the paste the zipped tarball you want to install: " go_zipped_tar
 
@@ -20,5 +21,17 @@ then
 	rm -f go.tar.gz
 fi
 
-echo "Installing shfmt..."
-go get -u -v mvdan.cc/sh/cmd/shfmt
+if should "Install shfmt?";
+then
+	echo "Installing shfmt"
+	go get -u -v mvdan.cc/sh/cmd/shfmt
+fi
+
+if should "Install direnv?";
+then
+	current_dir=$(pwd)
+	echo "Installing direnv"
+	git clone https://github.com/direnv/direnv.git
+	cd direnv && make && make install && cd ..
+	rm -rf "$current_dir"/direnv
+fi

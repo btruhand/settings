@@ -123,7 +123,7 @@ source <(npm completion)
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-export PATH="$(brew --prefix homebrew/core/php@5.6)/bin:$NPM_PACKAGES/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:$PATH"
+export PATH="$(brew --prefix homebrew/core/php@5.6)/bin:$NPM_PACKAGES/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$PATH"
 export GRAPHVIZ_DOT="/usr/local/bin/dot"
 
 LC_ALL=en_us.UTF-8

@@ -5,7 +5,7 @@ INSTALL=$1
 VALIDINSTALLSTEPS=(
   'bootstrap' 'provision' 'build-brew' 'build-git'
   'build-node' 'build-git' 'build-ruby'
-  'build-python' 'build-packagetools' 'build-vim'
+  'build-python' 'build-go' 'build-packagetools' 'build-vim'
   'security'
 )
 
@@ -21,7 +21,7 @@ print_usage() {
   echo "Arguments:"
   echo "   script-step    bootstrap, provision, build-brew"
   echo "                  build-git, build-node, build-ruby, build-packagetools"
-  echo "                  build-vim, build-python"
+  echo "                  build-vim, build-python, build-go"
   echo "                  security"
   return 1
 }

@@ -37,6 +37,7 @@ else
   INSTALL=( $INSTALL )
 fi
 
+source ./installers/scripts/routines.sh
 for STEP in "${INSTALL[@]}"; do
-  sh ./installers/scripts/$STEP $(pwd)
+  source ./installers/scripts/$STEP $(pwd)
 done

@@ -14,3 +14,7 @@ function should() {
     return 1
   fi
 }
+
+function get_script_dir() {
+  echo $(cd $(dirname $BASH_SOURCE) && pwd)
+}

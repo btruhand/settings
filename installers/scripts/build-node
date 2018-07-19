@@ -1,14 +1,22 @@
 #!/bin/bash
 
-## Install nvm
-[ -d ~/.nvm ] && rm -rf ~/.nvm
-git clone --depth 1 --branch master https://github.com/creationix/nvm.git ~/.nvm
-cd ~/.nvm && . nvm.sh
+SETTINGS_DIR="$1"
+NVM_DIR="$HOME/.nvm"
 
-nvm install --lts
+if should "Install nvm?";
+then
+  [ -d ~/.nvm ] && rm -rf ~/.nvm
+  git clone --depth 1 --branch master https://github.com/creationix/nvm.git ~/.nvm
+  cd ~/.nvm && . nvm.sh
+fi
 
-# Install jsctags
-npm install -g jsctags
+if should "Redeploy default packages?";
+then
+  cp "$SETTINGS_DIR/nvm/default-packages" "$NVM_DIR/default-packages"
+fi
 
-# Install eslint
-npm install -g eslint
+if should "Install Node LTS?";
+then
+  . $NVM_DIR/nvm.sh
+  nvm install --lts
+fi

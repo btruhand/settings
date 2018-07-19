@@ -1,7 +1,6 @@
 # installing go
 
 SETTINGS_DIR="$1"
-source "$SETTINGS_DIR/installers/scripts/routines.sh"
 
 if should "Install go?";
 then

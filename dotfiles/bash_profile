@@ -123,7 +123,15 @@ source <(npm completion)
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-export PATH="$(brew --prefix homebrew/core/php@5.6)/bin:$NPM_PACKAGES/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$PATH"
+if [ -z "$ORIGINAL_PATH" ];
+then
+	export ORIGINAL_PATH="$PATH"
+fi
+TO_BE_PATH="$(brew --prefix homebrew/core/php@5.6)/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$ORIGINAL_PATH"
+if [[ "$TO_BE_PATH" != "$PATH" ]];
+then
+	export PATH="$TO_BE_PATH"
+fi
 export GRAPHVIZ_DOT="/usr/local/bin/dot"
 
 LC_ALL=en_us.UTF-8

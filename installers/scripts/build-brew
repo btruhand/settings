@@ -26,7 +26,7 @@ brew install libtool
 brew install graphviz
 
 # install bash completion
-brew install bash-completion
+brew install bash-completion@2
 
 # brew health checkup
 brew doctor

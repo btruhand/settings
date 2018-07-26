@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# RUN ONLY WHEN EVERYTHING ELSE IS ALREADY SETUP
+# THIS IS TO BOOTSTRAP THE ENVIRONMENT TO WORK AS INTENDED
+
 SETTINGS_DIR=$(dirname $(dirname $(cd $(dirname $0) && pwd)))
 
 # initialize bash profile
@@ -18,3 +21,9 @@ cp "$SETTINGS_DIR"/dotfiles/vimrc ~/.vimrc
 
 # see: https://github.com/creationix/nvm#default-global-packages-from-file-while-installing
 cp "$SETTINGS_DIR"/installers/npm-default-packages ~/.nvm/default-packages
+
+# changing shell to bash install
+sudo bash -c "echo '/usr/local/bin/bash' >> /etc/shells"
+chsh -s /usr/local/bin/bash
+
+echo "All set up. Please re-login to the terminal"

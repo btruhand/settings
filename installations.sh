@@ -3,10 +3,10 @@
 INSTALL=$1
 
 VALIDINSTALLSTEPS=(
-  'bootstrap' 'provision' 'build-brew' 'build-git'
+  'provision' 'build-brew' 'build-git'
   'build-node' 'build-git' 'build-ruby'
   'build-python' 'build-go' 'build-packagetools' 'build-vim'
-  'security'
+  'security' 'bootstrap'
 )
 
 is_single_install_valid() {

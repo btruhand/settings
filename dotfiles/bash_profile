@@ -41,7 +41,7 @@ cp_to_settings() {
 	cp $2 $SETTINGS_DIR/$1
 }
 cp_from_settings() {
-	cp $SETTINGS_DIR/$1 $2
+	cp -R $SETTINGS_DIR/$1 $2
 }
 cp_dotfile () {
 	cp_from_settings dotfiles/$1 ~/.$1
@@ -94,7 +94,8 @@ alias tagtest='git_tag test_Btara'
 alias tagstg='git_tag release_stg'
 alias tagdev='git_tag release_stg'
 alias tagrelease='git_tag release'
-alias so='cp_dotfile bash_profile && source ~/.bash_profile'
+alias so='cp_dotfile bash_profile && source $HOME/.bash_profile'
+alias sextras='[ -d $HOME/.extras ] && rm -r $HOME/.extras; cp_dotfile extras'
 alias se='edit_dotfile bash_profile'
 alias sete=edit_setfile
 alias dote=edit_dotfile
@@ -144,6 +145,8 @@ eval "$(rbenv init -)"
 # setting up direnv
 eval "$(direnv hook bash)"
 
-for sourcefiles in $HOME/.extras/*; do
-	source "$sourcefiles"
-done
+if [ -d $HOME/.extras/ ]; then
+	for sourcefiles in $HOME/.extras/*; do
+		source "$sourcefiles"
+	done
+fi

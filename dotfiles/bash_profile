@@ -143,3 +143,7 @@ export LANG="$LC_ALL"
 eval "$(rbenv init -)"
 # setting up direnv
 eval "$(direnv hook bash)"
+
+for sourcefiles in $HOME/.extras/*; do
+	source "$sourcefiles"
+done

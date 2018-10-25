@@ -1,26 +1,27 @@
 #!/bin/bash
 
 REFERENCE_DIR=$1
+TARGET_HOME="${2:-$HOME}"
 
 # Create code directory
-mkdir -p ~/Code/
-[ ! -e ~/Code/settings ] && cp -R $REFERENCE_DIR ~/Code/settings
-
-# prepare npm-packages folder
-mkdir -p ~/.npm-packages
+mkdir -p "$TARGET_HOME/Code/"
+[ ! -e "$TARGET_HOME/Code/settings" ] && cp -R $REFERENCE_DIR "$TARGET_HOME/Code/settings"
 
 ## Create vim color schemes folder
-mkdir -p ~/.vim/colors
+mkdir -p "$TARGET_HOME/.vim/colors"
+
+## Create .nvm dir
+mkdir -p "$TARGET_HOME/.nvm"
 
 # (Re-)publish scripts to home directory
-[ -e ~/.scripts ] && rm -rf ~/.scripts
-cp -R $REFERENCE_DIR/scripts ~/.scripts
+[ -e "$TARGET_HOME/.scripts" ] && rm -rf "$TARGET_HOME/.scripts"
+cp -R $REFERENCE_DIR/scripts $TARGET_HOME/.scripts
 
 # Turn off accented marks
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # iterm2
 ## Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/Code/settings/iterm2"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$TARGET_HOME/Code/settings/iterm2"
 ## Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true

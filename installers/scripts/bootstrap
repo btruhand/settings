@@ -7,23 +7,23 @@ SETTINGS_DIR=$(cd $(dirname $0) && pwd)
 TARGET_HOME="${2:-$HOME}"
 
 # initialize bash profile
-cp "$SETTINGS_DIR"/dotfiles/bash_profile "$TARGET_HOME/.bash_profile"
+ln -sf "$SETTINGS_DIR"/dotfiles/bash_profile "$TARGET_HOME/.bash_profile"
 
 # Copy bashrc
-cp "$SETTINGS_DIR"/dotfiles/bashrc "$TARGET_HOME/.bashrc"
+ln -sf "$SETTINGS_DIR"/dotfiles/bashrc "$TARGET_HOME/.bashrc"
 
 # Copy all remaining dotfiles
-cp "$SETTINGS_DIR"/dotfiles/ctags "$TARGET_HOME/.ctags"
-cp "$SETTINGS_DIR"/dotfiles/eslintrc.json "$TARGET_HOME/.eslintrc.json"
-cp "$SETTINGS_DIR"/dotfiles/gitconfig "$TARGET_HOME/.gitconfig"
-cp "$SETTINGS_DIR"/dotfiles/npmrc "$TARGET_HOME/.npmrc"
-cp "$SETTINGS_DIR"/dotfiles/tern-project "$TARGET_HOME/.tern-project"
-cp "$SETTINGS_DIR"/dotfiles/vimrc "$TARGET_HOME/.vimrc"
+ln -sf "$SETTINGS_DIR"/dotfiles/ctags "$TARGET_HOME/.ctags"
+ln -sf "$SETTINGS_DIR"/dotfiles/eslintrc.json "$TARGET_HOME/.eslintrc.json"
+ln -sf "$SETTINGS_DIR"/dotfiles/gitconfig "$TARGET_HOME/.gitconfig"
+ln -sf "$SETTINGS_DIR"/dotfiles/npmrc "$TARGET_HOME/.npmrc"
+ln -sf "$SETTINGS_DIR"/dotfiles/tern-project "$TARGET_HOME/.tern-project"
+ln -sf "$SETTINGS_DIR"/dotfiles/vimrc "$TARGET_HOME/.vimrc"
 
 # see: https://github.com/creationix/nvm#default-global-packages-from-file-while-installing
-cp "$SETTINGS_DIR"/installers/npm-default-packages "$TARGET_HOME/.nvm/default-packages"
+ln -sf "$SETTINGS_DIR"/installers/npm-default-packages "$TARGET_HOME/.nvm/default-packages"
 
 # changing shell to bash install if available
-[ -x '/usr/local/bin/bash' ] && sudo bash -c "echo '/usr/local/bin/bash' >> /etc/shells" && chsh -s /usr/local/bin/bash
+[[ -x '/usr/local/bin/bash' && '/usr/local/bin/bash' != $(which bash) ]] && sudo bash -c "echo '/usr/local/bin/bash' >> /etc/shells" && chsh -s /usr/local/bin/bash
 
 echo "All set up. Please re-login to the terminal"

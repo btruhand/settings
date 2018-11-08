@@ -30,20 +30,17 @@ git_tag () {
 	git tag $1_`date +%Y%m%d%H%M%S` && (git describe --tag --always | xargs git push origin)
 }
 source_dotfile () {
-	cp_dotfile $1
+	link_dotfile $1
 	source ~/.$1
 }
-cp_to_settings() {
-	cp $2 $SETTINGS_DIR/$1
+link_from_settings() {
+	ln -sFf $SETTINGS_DIR/$1 $2
 }
-cp_from_settings() {
-	cp -R $SETTINGS_DIR/$1 $2
+link_dotfile () {
+	link_from_settings dotfiles/$1 ~/.$1
 }
-cp_dotfile () {
-	cp_from_settings dotfiles/$1 ~/.$1
-}
-cp_config () {
-	cp_from_settings configurations/$1 ~/
+link_config () {
+	link_from_settings configurations/$1 ~/.$1
 }
 edit_setfile () {
 	vim $SETTINGS_DIR/$1
@@ -90,14 +87,13 @@ alias tagtest='git_tag test_Btara'
 alias tagstg='git_tag release_stg'
 alias tagdev='git_tag release_stg'
 alias tagrelease='git_tag release'
-alias so='cp_dotfile bash_profile && source $HOME/.bash_profile'
-alias sextras='[ -d $HOME/.extras ] && rm -r $HOME/.extras; cp_dotfile extras'
+alias so='link_dotfile bash_profile && source $HOME/.bash_profile'
+alias sextras='[ -d $HOME/.extras ] && rm -r $HOME/.extras; link_dotfile extras'
 alias se='edit_dotfile bash_profile'
 alias sete=edit_setfile
 alias dote=edit_dotfile
-alias dotcp=cp_dotfile
-alias cptoset=cp_to_settings
-alias cpfromset=cp_from_settings
+alias dotcp=link_dotfile
+alias lfromset=link_from_settings
 alias gitset=git_settings
 alias dotso=source_dotfile
 alias mkjstags=make_jsctags
@@ -105,7 +101,7 @@ alias uml=uml_diagram
 alias prename=partial_rename_files
 alias ll='ls -a'
 alias phpctags='php ~/Code/tools/phpctags'
-alias cpconf=cp_config
+alias lconf=link_config
 alias insecurechrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors'
 
 # some PHP/Apache things
@@ -136,7 +132,7 @@ if [ -z "$ORIGINAL_PATH" ];
 then
 	export ORIGINAL_PATH="$PATH"
 fi
-TO_BE_PATH="$(brew --prefix homebrew/core/php@5.6)/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$ORIGINAL_PATH"
+TO_BE_PATH="/anaconda3/bin/conda:$(brew --prefix homebrew/core/php@5.6)/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$ORIGINAL_PATH"
 if [[ "$TO_BE_PATH" != "$PATH" ]];
 then
 	export PATH="$TO_BE_PATH"

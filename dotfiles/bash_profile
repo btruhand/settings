@@ -2,6 +2,7 @@ export EDITOR=vim
 export CODE_DIR=~/Code
 export SETTINGS_DIR=$CODE_DIR/settings
 export DOTFILES_DIR=$SETTINGS_DIR/dotfiles
+export TOMCAT_HOME=$HOME/Code/apache-tomcat-9.0.19/
 
 if [ -f ~/.profile ]; then
 	source ~/.profile

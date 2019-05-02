@@ -1,5 +1,5 @@
 [alias]
-	lg = "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --abbrev-commit --date=local"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%C(cyan)(%ae)%Creset' --abbrev-commit --date=local
 	pb = push origin HEAD
 	diffp = diff HEAD~1 HEAD
 	co = checkout

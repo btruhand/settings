@@ -132,7 +132,7 @@ if [ -z "$ORIGINAL_PATH" ];
 then
 	export ORIGINAL_PATH="$PATH"
 fi
-TO_BE_PATH="/anaconda3/bin:$(brew --prefix homebrew/core/php@5.6)/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$ORIGINAL_PATH"
+TO_BE_PATH="$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$ORIGINAL_PATH"
 if [[ "$TO_BE_PATH" != "$PATH" ]];
 then
 	export PATH="$TO_BE_PATH"
@@ -151,3 +151,7 @@ fi
 if [ -f ~/.iterm2_shell_integration.`basename $SHELL` ]; then
 	source ~/.iterm2_shell_integration.`basename $SHELL`
 fi
+
+# setup conda
+. /anaconda3/etc/profile.d/conda.sh
+conda activate

@@ -1,0 +1,37 @@
+" availability of set options for IdeaVim is here: https://github.com/JetBrains/ideavim/blob/master/doc/set-commands.md
+
+" numberline
+set number
+
+" share clipboard
+set clipboard=unnamed
+
+" ignore case in search
+set ignorecase
+
+" if search has uppercase ignore ignorecase
+set smartcase
+
+" highlight search
+set hlsearch
+
+" show where search pattern matches
+set incsearch
+
+set showmode
+
+" extensions
+set surround
+set multiple-cursors
+
+" LEADER
+let mapleader = "."
+
+" move lines up and down
+nnoremap <S-j> :m+1<CR>
+nnoremap <S-k> :m-2<CR>
+
+" Closing and writing
+nnoremap <S-w>q :wq!<CR>
+nnoremap <S-c> :q!<CR>
+nnoremap <S-s> :w!<CR>

@@ -9,3 +9,4 @@
 	email = btara.truhandarien@gmail.com
 [core]
 	editor = /usr/local/bin/vim
+	autocrlf = input

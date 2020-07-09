@@ -23,7 +23,7 @@ print_usage() {
   echo "Arguments:"
   echo "   script-step    provision, bootstrap, build-brew"
   echo "                  build-git, build-node, build-ruby, build-packagetools"
-  echo "                  build-vim, build-python, build-go"
+  echo "                  build-conda, build-vim, build-python, build-go"
   echo "                  security"
   return 1
 }

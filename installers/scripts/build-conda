@@ -1,0 +1,20 @@
+if should "Install conda?";
+then
+	read -p "Please open https://docs.conda.io/en/latest/miniconda.html and copy and paste the link for the installer you want to install: " conda_installer_url
+
+	([ $? -ne 0 ] || [ -z $conda_installer ] ) && echo "Conda installer was not properly given. Exiting..." && exit 1
+
+	echo "Installing conda..."
+	curl $conda_installer_url -o conda_installer.sh
+	sh conda_installer.sh
+	if [ $? -eq 0 ];
+	then
+		echo "Installed conda..."
+	else
+		echo "Unable to install conda..."
+	fi
+
+	echo "setting auto_activate_base to true"
+	conda config --set auto_activate_base true
+	rm conda_installer.sh
+fi

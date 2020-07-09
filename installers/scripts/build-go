@@ -20,17 +20,3 @@ then
 	rm -f go.tar.gz
 fi
 
-if should "Install shfmt?";
-then
-	echo "Installing shfmt"
-	go get -u -v mvdan.cc/sh/cmd/shfmt
-fi
-
-if should "Install direnv?";
-then
-	current_dir=$(pwd)
-	echo "Installing direnv"
-	git clone https://github.com/direnv/direnv.git
-	cd direnv && make && make install && cd ..
-	rm -rf "$current_dir"/direnv
-fi

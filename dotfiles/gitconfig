@@ -6,7 +6,7 @@
 	br = branch
 [user]
 	name = Btara Truhandarien
-	email = btara.truhandarien@gmail.com
+	email = 10100624+btruhand@users.noreply.github.com
 [core]
 	editor = /usr/local/bin/vim
 	autocrlf = input

@@ -32,7 +32,11 @@ git_tag () {
 }
 source_dotfile () {
 	link_dotfile $1
-	source ~/.$1
+	if [ $1 == "bash_profile" ] && [ -f ~/.bashrc ]; then
+		source ~/.bashrc
+	else
+		source ~/.$1
+	fi
 }
 link_from_settings() {
 	ln -sFf $SETTINGS_DIR/$1 $2
@@ -88,7 +92,7 @@ alias tagtest='git_tag test_Btara'
 alias tagstg='git_tag release_stg'
 alias tagdev='git_tag release_stg'
 alias tagrelease='git_tag release'
-alias so='link_dotfile bash_profile && source $HOME/.bash_profile'
+alias so='source_dotfile bash_profile'
 alias sextras='[ -d $HOME/.extras ] && rm -r $HOME/.extras; link_dotfile extras'
 alias se='edit_dotfile bash_profile'
 alias sete=edit_setfile
@@ -107,13 +111,6 @@ alias insecurechrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Ch
 
 # some PHP/Apache things
 alias apache='apachectl'
-
-# nvm and node setup
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use default
-source <(npm completion)
 
 if [ -f /usr/local/share/bash-completion/bash_completion ]; then
 	. /usr/local/share/bash-completion/bash_completion
@@ -152,22 +149,3 @@ fi
 if [ -f ~/.iterm2_shell_integration.`basename $SHELL` ]; then
 	source ~/.iterm2_shell_integration.`basename $SHELL`
 fi
-
-# setup conda
-conda init
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/btaratruhandarien/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/btaratruhandarien/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/btaratruhandarien/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/btaratruhandarien/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-

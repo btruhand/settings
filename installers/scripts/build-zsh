@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+SETTINGS_DIR=$(get_settings_dir)
+
+if $(which zsh) 2>&1 /dev/null; then
+	if [[ ! -d /Users/Btara/.oh-my-zsh ]]; then
+		echo "Installing Oh-My-ZSH"
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	fi
+	echo "Relinking $HOME/.zshrc with the one in $SETTINGS_DIR/dotfiles/zshrc"
+	ln -sFf $SETTINGS_DIR/dotfiles/zshrc $HOME/.zshrc
+else
+	echo "zsh is not installed!" 1>&2
+fi

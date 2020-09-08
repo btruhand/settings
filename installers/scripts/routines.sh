@@ -18,3 +18,7 @@ function should() {
 function get_script_dir() {
   echo $(cd $(dirname $BASH_SOURCE) && pwd)
 }
+
+function get_settings_dir() {
+  echo $(cd $(dirname $(dirname get_script_dir)) && pwd)
+}

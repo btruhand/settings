@@ -8,7 +8,7 @@ VALIDINSTALLSTEPS=(
   'provision' 'build-brew' 'build-git'
   'build-node' 'build-git' 'build-ruby'
   'build-python' 'build-go' 'build-packagetools' 'build-vim'
-  'security' 'bootstrap'
+  'build-zsh' 'security' 'bootstrap'
 )
 
 is_single_install_valid() {

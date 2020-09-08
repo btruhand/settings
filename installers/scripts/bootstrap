@@ -12,6 +12,9 @@ ln -sf "$SETTINGS_DIR"/dotfiles/bash_profile "$TARGET_HOME/.bash_profile"
 # Copy bashrc
 ln -sf "$SETTINGS_DIR"/dotfiles/bashrc "$TARGET_HOME/.bashrc"
 
+# initialize zshrc
+ln -sf "$SETTINGS_DIR"/dotfiles/zshrc "$TARGET_HOME/.zshrc"
+
 # Copy all remaining dotfiles
 ln -sf "$SETTINGS_DIR"/dotfiles/ctags "$TARGET_HOME/.ctags"
 ln -sf "$SETTINGS_DIR"/dotfiles/eslintrc.json "$TARGET_HOME/.eslintrc.json"
@@ -24,6 +27,10 @@ ln -sf "$SETTINGS_DIR"/dotfiles/vimrc "$TARGET_HOME/.vimrc"
 ln -sf "$SETTINGS_DIR"/installers/npm-default-packages "$TARGET_HOME/.nvm/default-packages"
 
 # changing shell to bash install if available
-[[ -x '/usr/local/bin/bash' && '/usr/local/bin/bash' != $(which bash) ]] && sudo bash -c "echo '/usr/local/bin/bash' >> /etc/shells" && chsh -s /usr/local/bin/bash
+if [[ -x '/bin/zsh' && '/bin/zsh' == $(which zsh) && '/bin/zsh' == $(echo $SHELL) ]]; then
+	echo "default zsh is installed will not bootstrap another one"
+elif [[ -x '/usr/local/bin/bash' && '/usr/local/bin/bash' != $(which bash) ]]; then
+	sudo bash -c "echo '/usr/local/bin/bash' >> /etc/shells" && chsh -s /usr/local/bin/bash
+fi
 
 echo "All set up. Please re-login to the terminal"

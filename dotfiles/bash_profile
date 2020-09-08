@@ -32,7 +32,7 @@ git_tag () {
 }
 source_dotfile () {
 	link_dotfile $1
-	if [ $1 == "bash_profile" ] && [ -f ~/.bashrc ]; then
+	if [[ $1 == "bash_profile" && -f ~/.bashrc ]]; then
 		source ~/.bashrc
 	else
 		source ~/.$1
@@ -122,9 +122,9 @@ LC_ALL=en_us.UTF-8
 export LANG="$LC_ALL"
 
 # setting up rbenv
-eval "$(rbenv init -)"
+[[ -x rbenv ]] && eval "$(rbenv init -)"
 # setting up direnv
-eval "$(direnv hook bash)"
+[[ -x direnv ]] && eval "$(direnv hook bash)"
 
 if [ -z "$ORIGINAL_PATH" ];
 then

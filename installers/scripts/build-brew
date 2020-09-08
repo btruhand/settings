@@ -1,37 +1,58 @@
-# git aware prompt
-[ ! -e ~/Code/git-aware-prompt ] && git clone https://github.com/btruhand/git-aware-prompt.git ~/Code/git-aware-prompt
-
 # Install brew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [[ ! -x $(which brew) ]]; then
+	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
 
 # brew install coreutils
 brew install coreutils
 
 # base
-brew install php@5.6
+if should "Install php@5.6?"; then
+	brew install php@5.6
+fi
 # Install rbenv
-brew install rbenv
+if should "Install rbenv?"; then
+	brew install rbenv
+fi
 # Install vim
-brew install vim --with-override-system-vi
+if should "Install vim?"; then
+	brew install vim
+fi
 # Install python3
-brew install python3
+if should "Install python3?"; then
+	brew install python3
+fi
 # Install cmake
-brew install cmake
+if should "Install cmake?"; then
+	brew install cmake
+fi
 # install java
-brew cask install java
+if should "Install java?"; then
+	brew cask install java
+fi
 # install graphviz (mainly for plantuml)
 ## Install libtool
-brew install libtool
+if should "Install libtool?"; then
+	brew install libtool
+fi
 ## Install graphviz
-brew install graphviz
+if should "Install graphviz?"; then
+	brew install graphviz
+fi
 
 # install bash from brew
-brew install bash
+if should "Install bash?"; then
+	brew install bash
+fi
 # install bash completion
-brew install bash-completion@2
+if should "Install bash-completion@2"; then
+	brew install bash-completion@2
+fi
 
 # brew pyenv
-brew install pyenv
+if should "Install pyenv?"; then
+	brew install pyenv
+fi
 
 # brew shfmt
 if should "Install shfmt?"; then

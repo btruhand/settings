@@ -20,8 +20,8 @@
     "editor.acceptSuggestionOnCommitCharacter": true,
     "editor.acceptSuggestionOnEnter": "on",
     "editor.accessibilitySupport": "auto",
-    "editor.autoClosingBrackets": "always",
-    "editor.autoIndent": true,
+    "editor.autoClosingBrackets": "beforeWhitespace",
+    "editor.autoIndent": "advanced",
     "editor.codeLens": true,
     "editor.colorDecorators": true,
     "editor.cursorBlinking": "smooth",
@@ -46,6 +46,17 @@
         "editor.tabSize": 2,
         "editor.insertSpaces": true
     },
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[cpp]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[shellscript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
     "workbench.editor.closeOnFileDelete": false,
     "javascript.preferences.quoteStyle": "single",
     "typescript.preferences.quoteStyle": "single",
@@ -55,6 +66,9 @@
     "vim.foldfix": true,
     "editor.wrappingIndent": "indent",
     "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+    "terminal.integrated.shellArgs.osx": [
+        "-l"
+    ],
     "terminal.external.osxExec": "iTerm.app",
     "terminal.explorerKind": "external",
     "breadcrumbs.enabled": true,
@@ -62,4 +76,41 @@
     "files.useExperimentalFileWatcher": true,
     "editor.tabCompletion": "on",
     "editor.suggest.localityBonus": true,
+    "workbench.editor.highlightModifiedTabs": true,
+    "files.associations": {
+        "Dockerfile-server": "dockerfile",
+        "Dockerfile-streaming": "dockerfile",
+        "Dockerfile-rabbitmq": "dockerfile",
+        "Dockerfile-spark": "dockerfile",
+        "Dockerfile-spark-app": "dockerfile",
+        "Dockerfile-spark-worker": "dockerfile",
+        "Dockerfile-kafka": "dockerfile"
+    },
+    "merge-conflict.codeLens.enabled": true,
+    "git.autofetch": true,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "python.jediEnabled": false,
+    "editor.suggest.maxVisibleSuggestions": 10,
+    "vsintellicode.python.completionsEnabled": true,
+    "editor.parameterHints.enabled": true,
+    "terminal.integrated.inheritEnv": false,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "block-outline",
+    "vim.cursorStylePerMode.replace": "line",
+    "vim.cursorStylePerMode.visual": "line-thin",
+    "vim.cursorStylePerMode.visualblock": "underline",
+    "python.dataScience.sendSelectionToInteractiveWindow": false,
+    "workbench.editor.enablePreview": false,
+    "git.autoStash": true,
+    "vim.overrideCopy": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "python.languageServer": "Microsoft",
+    "terminal.integrated.automationShell.osx": "-l",
+    "bashIde.explainshellEndpoint": "http://localhost:5050",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "typescript.tsdk": "./node_modules/typescript/lib",
 }

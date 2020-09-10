@@ -17,3 +17,4 @@ Please see installations.sh and run
   - Make sure to setup iterm to use saved settings in `iterm2` folder
 - Docker: https://docs.docker.com/docker-for-mac/install/
 - VSCode: https://code.visualstudio.com/Download
+  - For syncing settings: https://code.visualstudio.com/docs/editor/settings-sync

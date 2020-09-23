@@ -3,7 +3,7 @@
 SETTINGS_DIR=$(get_settings_dir)
 
 if $(which zsh) 2>&1 /dev/null; then
-	if [[ ! -d /Users/Btara/.oh-my-zsh ]]; then
+	if [[ ! -d $HOME/.oh-my-zsh ]]; then
 		echo "Installing Oh-My-ZSH"
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	fi

@@ -24,7 +24,7 @@ print_usage() {
   echo "   script-step    provision, bootstrap, build-brew"
   echo "                  build-git, build-node, build-ruby, build-packagetools"
   echo "                  build-conda, build-vim, build-python, build-go"
-  echo "                  security"
+  echo "                  build-zsh security"
   return 1
 }
 

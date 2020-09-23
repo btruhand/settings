@@ -104,7 +104,6 @@ alias dotso=source_dotfile
 alias mkjstags=make_jsctags
 alias uml=uml_diagram
 alias prename=partial_rename_files
-alias ll='ls -a'
 alias phpctags='php ~/Code/tools/phpctags'
 alias lconf=link_config
 alias insecurechrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors'

@@ -12,3 +12,28 @@ if $(which zsh) 2>&1 /dev/null; then
 else
 	echo "zsh is not installed!" 1>&2
 fi
+
+if should "Install zsh-autosuggestions?"; then
+  if [[ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  else
+    if should "zsh-autosuggestions already installed, update?"; then
+      cd $ZSH_CUSTOM/plugins/zsh-autosuggestions
+      git pull origin
+      cd -
+    fi
+  fi
+fi
+
+if should "Install zsh-syntax-highlighting?"; then
+  if [[ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  else
+    if should "zsh-synxtax-highlighting already installed, update?"; then
+      cd $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+      git pull origin
+      cd -
+    fi
+  fi
+fi
+

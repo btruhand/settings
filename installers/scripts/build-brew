@@ -6,22 +6,11 @@ fi
 # brew install coreutils
 brew install coreutils
 
-# base
-if should "Install php@5.6?"; then
-	brew install php@5.6
-fi
-# Install rbenv
-if should "Install rbenv?"; then
-	brew install rbenv
-fi
 # Install vim
 if should "Install vim?"; then
 	brew install vim
 fi
-# Install python3
-if should "Install python3?"; then
-	brew install python3
-fi
+
 # Install cmake
 if should "Install cmake?"; then
 	brew install cmake
@@ -62,6 +51,14 @@ fi
 # brew direnv
 if should "Install direnv?"; then
 	brew install direnv
+fi
+
+if should "Install fzf?"; then
+	brew install fzf
+fi
+
+if should "Install tldr?"; then
+	brew install tldr
 fi
 
 # brew health checkup

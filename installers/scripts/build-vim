@@ -23,9 +23,6 @@ vim +PluginInstall
 # Setting up tern_for_vim
 cd ~/.vim/bundle/tern_for_vim/ && npm install
 
-# install phpctags
-curl -Ss http://vim-php.com/phpctags/install/phpctags.phar > ~/Code/tools/phpctags
-
 # put filetype.vim
 echo "Copying filetype.vim to $HOME/.vim"
 cp "$SETTINGS_DIR"/vim/filetype.vim $HOME/.vim/filetype.vim

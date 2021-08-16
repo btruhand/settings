@@ -4,7 +4,9 @@ if [[ ! -x $(which brew) ]]; then
 fi
 
 # brew install coreutils
-brew install coreutils
+if should "Install coreutils?"; then
+	brew install coreutils
+fi
 
 # Install vim
 if should "Install vim?"; then
@@ -55,6 +57,7 @@ fi
 
 if should "Install fzf?"; then
 	brew install fzf
+	/usr/local/opt/fzf/install
 fi
 
 if should "Install tldr?"; then

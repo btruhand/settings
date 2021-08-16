@@ -7,7 +7,7 @@ TARGET_HOME="$2"
 VALIDINSTALLSTEPS=(
   'provision' 'build-brew' 'build-git'
   'build-node' 'build-ruby'
-  'build-python' 'build-go' 'build-packagetools' 'build-vim'
+  'build-python' 'build-go' 'build-vim'
   'build-zsh' 'security' 'bootstrap'
 )
 

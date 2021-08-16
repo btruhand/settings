@@ -22,3 +22,13 @@ function get_script_dir() {
 function get_settings_dir() {
   echo $(cd $(dirname $(dirname get_script_dir)) && pwd)
 }
+
+function is_installed?() {
+  local binary
+  binary="$1"
+  if [[ $(which $binary) ]]; then
+    return 0
+  fi
+  return 1
+}
+

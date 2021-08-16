@@ -1,0 +1,8 @@
+if is_installed? 'brew'; then
+	set -e
+	brew install --cask docker
+	open /Applications/Docker.app
+	set +e
+else
+	echo 'brew is needed to install Docker'
+fi

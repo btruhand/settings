@@ -15,6 +15,5 @@ Please see installations.sh and run
 - Windows in Virtual Box: http://sites.miis.edu/kb/2012/06/19/how-to-install-virtualbox-and-windows-on-your-mac/
 - iTerm2: https://www.iterm2.com/downloads.html
   - Make sure to setup iterm to use saved settings in `iterm2` folder
-- Docker: https://docs.docker.com/docker-for-mac/install/
 - VSCode: https://code.visualstudio.com/Download
   - For syncing settings: https://code.visualstudio.com/docs/editor/settings-sync

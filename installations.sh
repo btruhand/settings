@@ -9,6 +9,7 @@ VALIDINSTALLSTEPS=(
   'build-node' 'build-ruby'
   'build-python' 'build-go' 'build-vim'
   'build-zsh' 'security' 'bootstrap'
+  'build-docker'
 )
 
 is_single_install_valid() {

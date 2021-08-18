@@ -22,6 +22,10 @@ eval "$(direnv hook zsh)"
 # vi-mode. see: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 VI_MODE_SET_CURSOR=true
 
+# NVM plugin
+NVM_LAZY=1
+NVM_AUTOLOAD=1
+
 ############# Oh-My-ZSH parts
 
 # If you come from bash you might have to change your $PATH.

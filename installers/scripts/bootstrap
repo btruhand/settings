@@ -6,22 +6,9 @@
 SETTINGS_DIR=$(cd $(dirname $0) && pwd)
 TARGET_HOME="${2:-$HOME}"
 
-# initialize bash profile
-ln -sf "$SETTINGS_DIR"/dotfiles/bash_profile "$TARGET_HOME/.bash_profile"
-
-# Copy bashrc
-ln -sf "$SETTINGS_DIR"/dotfiles/bashrc "$TARGET_HOME/.bashrc"
-
-# initialize zshrc
-ln -sf "$SETTINGS_DIR"/dotfiles/zshrc "$TARGET_HOME/.zshrc"
-
-# Copy all remaining dotfiles
-ln -sf "$SETTINGS_DIR"/dotfiles/ctags "$TARGET_HOME/.ctags"
-ln -sf "$SETTINGS_DIR"/dotfiles/eslintrc.json "$TARGET_HOME/.eslintrc.json"
-ln -sf "$SETTINGS_DIR"/dotfiles/gitconfig "$TARGET_HOME/.gitconfig"
-ln -sf "$SETTINGS_DIR"/dotfiles/npmrc "$TARGET_HOME/.npmrc"
-ln -sf "$SETTINGS_DIR"/dotfiles/tern-project "$TARGET_HOME/.tern-project"
-ln -sf "$SETTINGS_DIR"/dotfiles/vimrc "$TARGET_HOME/.vimrc"
+for DOTFILE in $SETTINGS_DIR/dotfiles/*; do
+  ln -sf "$DOTFILE" "$TARGET_HOME"/.$(basename $DOTFILE)
+done
 
 # see: https://github.com/creationix/nvm#default-global-packages-from-file-while-installing
 ln -sf "$SETTINGS_DIR"/installers/npm-default-packages "$TARGET_HOME/.nvm/default-packages"

@@ -8,7 +8,7 @@ VALIDINSTALLSTEPS=(
   'provision' 'build-brew' 'build-git'
   'build-node' 'build-ruby'
   'build-python' 'build-go' 'build-vim'
-  'build-zsh' 'security' 'bootstrap'
+  'build-zsh' 'build-aws' 'security' 'bootstrap'
   'build-docker'
 )
 
@@ -23,9 +23,9 @@ print_usage() {
   echo "./installations.sh [script-step]"
   echo "Arguments:"
   echo "   script-step    provision, bootstrap, build-brew"
-  echo "                  build-git, build-node, build-ruby, build-packagetools"
+  echo "                  build-git, build-node, build-ruby"
   echo "                  build-conda, build-vim, build-python, build-go"
-  echo "                  build-zsh security"
+  echo "                  build-zsh, build-aws, security"
   return 1
 }
 

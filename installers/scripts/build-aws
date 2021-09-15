@@ -1,0 +1,17 @@
+if should "Install AWS CLI?"; then
+	if ! is_installed? aws; then
+		curl "https://awscli.amazonaws.com/AWSCLIV2-2.0.30.pkg" -o "$HOME/Downloads/AWSCLIV2.pkg"
+		sudo installer -pkg "$HOME/Downloads/AWSCLIV2.pkg" -target /
+
+		echo 'Verifying installation'
+		if ! is_installed? aws; then
+			echo 'Failed to install AWS CLI, please check /var/log/install.log' >&2
+		else
+			echo 'Successfully installed AWS CLI'
+		fi
+	else
+		echo 'AWS CLI is already installed'
+	fi
+fi
+
+echo

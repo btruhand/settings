@@ -65,5 +65,9 @@ if should "Install tldr?"; then
 	brew install tldr
 fi
 
+if should "Install xsel?"; then
+	brew install xsel
+fi
+
 # brew health checkup
 brew doctor

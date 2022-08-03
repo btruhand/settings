@@ -4,8 +4,15 @@
 	diffp = diff HEAD~1 HEAD
 	co = checkout
 	br = branch
-	up = push --set-upstream origin HEAD
+	pushf = push --force-with-lease
+	up = push origin --set-upstream HEAD
 	down = pull origin
+	gone-br = !git fetch -p && git br -vv
+	amend = commit -a --amend --no-edit
+	af = !git amend && git pushf
+	ticket = "!f() { git checkout -b Btara/FD-${1}/${2}; }; f"
+	bsort = !git --no-pager branch --sort=-committerdate
+	re = amend --no-edit
 [user]
 	name = Btara Truhandarien
 	email = 10100624+btruhand@users.noreply.github.com
@@ -14,3 +21,7 @@
 	autocrlf = input
 [pull]
 	rebase = true
+[push]
+	default = current
+[rerere]
+	enabled = true

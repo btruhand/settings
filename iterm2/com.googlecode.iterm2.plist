@@ -41,28 +41,10 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf700-0x380000-0x7e</key>
-		<dict>
-			<key>Action</key>
-			<integer>20</integer>
-			<key>Label</key>
-			<string></string>
-			<key>Text</key>
-			<string></string>
-		</dict>
 		<key>0xf701-0x300000</key>
 		<dict>
 			<key>Action</key>
 			<integer>6</integer>
-			<key>Text</key>
-			<string></string>
-		</dict>
-		<key>0xf701-0x380000-0x7d</key>
-		<dict>
-			<key>Action</key>
-			<integer>21</integer>
-			<key>Label</key>
-			<string></string>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -73,12 +55,10 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf702-0x380000-0x7b</key>
+		<key>0xf702-0x380000</key>
 		<dict>
 			<key>Action</key>
-			<integer>18</integer>
-			<key>Label</key>
-			<string></string>
+			<integer>2</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -89,12 +69,10 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
-		<key>0xf703-0x380000-0x7c</key>
+		<key>0xf703-0x380000</key>
 		<dict>
 			<key>Action</key>
-			<integer>19</integer>
-			<key>Label</key>
-			<string></string>
+			<integer>0</integer>
 			<key>Text</key>
 			<string></string>
 		</dict>
@@ -119,7 +97,21 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0xf72c-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>9</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0xf72d-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>8</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72d-0x20000</key>
 		<dict>
 			<key>Action</key>
 			<integer>8</integer>
@@ -154,6 +146,18 @@
 		<dict>
 			<key>ASCII Anti Aliased</key>
 			<true/>
+			<key>AWDS Pane Directory</key>
+			<string></string>
+			<key>AWDS Pane Option</key>
+			<string>Recycle</string>
+			<key>AWDS Tab Directory</key>
+			<string></string>
+			<key>AWDS Tab Option</key>
+			<string>Recycle</string>
+			<key>AWDS Window Directory</key>
+			<string></string>
+			<key>AWDS Window Option</key>
+			<string>No</string>
 			<key>Ambiguous Double Width</key>
 			<false/>
 			<key>Ansi 0 Color</key>
@@ -363,7 +367,7 @@
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
-			<string>Recycle</string>
+			<string>Advanced</string>
 			<key>Default Bookmark</key>
 			<string>No</string>
 			<key>Description</key>
@@ -809,7 +813,7 @@
 			<key>Show Status Bar</key>
 			<true/>
 			<key>Silence Bell</key>
-			<true/>
+			<false/>
 			<key>Status Bar Layout</key>
 			<dict>
 				<key>advanced configuration</key>
@@ -9242,6 +9246,8 @@
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
+	<key>kTurnOffSlowTriggersOfferUserDefaultsKey</key>
 	<false/>
 </dict>
 </plist>

@@ -4,6 +4,8 @@
 	diffp = diff HEAD~1 HEAD
 	co = checkout
 	br = branch
+	up = push --set-upstream origin HEAD
+	down = pull origin
 [user]
 	name = Btara Truhandarien
 	email = 10100624+btruhand@users.noreply.github.com

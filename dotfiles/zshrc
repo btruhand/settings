@@ -4,6 +4,16 @@ source ~/.bash_profile
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
+#######
+# search command history, see: https://superuser.com/questions/197813/cycle-through-matches-in-zsh-history-incremental-pattern-search-backward
+bindkey -M vicmd '/' history-incremental-pattern-search-backward
+bindkey -M vicmd '?' history-incremental-pattern-search-forward
+
+# set up for insert mode too
+bindkey -M viins '^R' history-incremental-pattern-search-backward
+bindkey -M viins '^F' history-incremental-pattern-search-forward
+#######
+
 alias zshpr='cat ~/.zshrc'
 alias zsho='source_dotfile zshrc'
 alias zshe='edit_dotfile zshrc'

@@ -7,7 +7,7 @@
 	pushf = push --force-with-lease
 	up = push origin --set-upstream HEAD
 	down = pull origin
-	gone-br = !git fetch -p && git br -vv
+	gone-br = "!git fetch -p; git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == \"[gone]\" {sub(\"refs/heads/\", \"\", $1); print $1}' | xargs git br -D"
 	amend = commit -a --amend --no-edit
 	af = !git amend && git pushf
 	ticket = "!f() { git checkout -b Btara/FD-${1}/${2}; }; f"

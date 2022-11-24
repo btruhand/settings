@@ -1,8 +1,13 @@
 # Install brew
-if [[ ! -x $(which brew) ]]; then
+if [[ ! -x $(which brew) ]]  && should "Detected no brew. Install brew?"; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+	# these are setup instructions from the end of the brew install
+	echo '# Set PATH, MANPATH, etc., for Homebrew.' >> $HOME/.zprofile
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+	source ~/.zprofile
 fi
+
 
 # brew install coreutils
 if should "Install coreutils?"; then
@@ -19,7 +24,7 @@ if should "Install cmake?"; then
 	brew install cmake
 fi
 # install java
-if should "Install java?"; then
+if should "Install brew java?"; then
 	brew cask install java
 fi
 # install graphviz (mainly for plantuml)

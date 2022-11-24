@@ -51,6 +51,12 @@ if should "Install pyenv?"; then
 	brew install pyenv
 fi
 
+# brew rbenv
+if should "Install rbenv?"; then
+	brew install rbenv
+	rbenv init
+fi
+
 # brew shfmt
 if should "Install shfmt?"; then
 	brew install shfmt
@@ -63,7 +69,7 @@ fi
 
 if should "Install fzf?"; then
 	brew install fzf
-	/usr/local/opt/fzf/install
+	$(brew --prefix)/opt/fzf/install
 fi
 
 if should "Install tldr?"; then

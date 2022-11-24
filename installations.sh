@@ -42,5 +42,14 @@ fi
 
 source ./installers/scripts/routines.sh
 for STEP in "${INSTALL[@]}"; do
+	echo "**************************************"
+	echo "******** RUNNING SCRIPT $STEP ********"
+	echo "**************************************"
+
 	source $(pwd)/installers/scripts/$STEP $(pwd) "$2"
+
+	echo "**************************************"
+	echo "********* DONE SCRIPT $STEP **********"
+	echo "**************************************"
+	echo
 done

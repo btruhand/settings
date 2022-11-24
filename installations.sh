@@ -5,7 +5,7 @@ INSTALL=$1
 TARGET_HOME="$2"
 
 VALIDINSTALLSTEPS=(
-  'provision' 'build-brew' 'build-git'
+  'provision' 'build-brew'
   'build-node' 'build-ruby'
   'build-python' 'build-go' 'build-vim'
   'build-zsh' 'build-aws' 'security' 'bootstrap'
@@ -42,5 +42,5 @@ fi
 
 source ./installers/scripts/routines.sh
 for STEP in "${INSTALL[@]}"; do
-  source ./installers/scripts/$STEP $(pwd) "$2"
+	source $(pwd)/installers/scripts/$STEP $(pwd) "$2"
 done

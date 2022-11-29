@@ -1,4 +1,4 @@
-# Install brew
+installers/scripts/build-brew# Install brew
 if [[ ! -x $(which brew) ]]  && should "Detected no brew. Install brew?"; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -41,6 +41,7 @@ fi
 if should "Install bash?"; then
 	brew install bash
 fi
+
 # install bash completion
 if should "Install bash-completion@2"; then
 	brew install bash-completion@2

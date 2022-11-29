@@ -46,7 +46,9 @@ for STEP in "${INSTALL[@]}"; do
 	echo "******** RUNNING SCRIPT $STEP ********"
 	echo "**************************************"
 
-	source $(pwd)/installers/scripts/$STEP $(pwd) "$2"
+	if should "Run installer $STEP?"; then
+		source $(pwd)/installers/scripts/$STEP $(pwd) "$2"
+	fi
 
 	echo "**************************************"
 	echo "********* DONE SCRIPT $STEP **********"

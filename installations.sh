@@ -5,10 +5,11 @@ INSTALL=$1
 TARGET_HOME="$2"
 
 VALIDINSTALLSTEPS=(
-  'provision' 'build-brew'
-  'build-node' 'build-ruby'
+  ### PROVISION AND BOOTSTRAP MUST BE THE FIRST TWO
+  'provision' 'bootstrap'
+  'build-brew' 'build-node' 'build-ruby'
   'build-python' 'build-go' 'build-vim'
-  'build-zsh' 'build-aws' 'security' 'bootstrap'
+  'build-zsh' 'build-aws' 'security'
   'build-docker'
 )
 

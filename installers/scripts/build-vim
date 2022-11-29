@@ -1,6 +1,9 @@
 #!/bin/bash
+# Installs vim realted plugins
+# Note that $HOME/.vimrc NEEDS to be linked with the on in $SETTINGS_DIR/dotfiles/vimrc
+# This means that this script should be run AFTER bootstrap
 
-SETTINGS_DIR=$(dirname $(dirname $(cd $(dirname $0) && pwd)))
+SETTINGS_DIR=$(get_settings_dir)
 
 # stereokai
 git clone https://github.com/gummesson/stereokai.vim.git ~/.vim/stereokai
@@ -13,7 +16,7 @@ cp -r ~/.vim/iceberg/colors/iceberg.vim ~/.vim/colors/
 rm -rf ~/.vim/iceberg
 
 # Install vim plugins
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+[ ! -d ~/.vim/bundle/Vundle.vim ] && git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 vim +PluginInstall
 

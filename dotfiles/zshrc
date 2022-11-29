@@ -19,15 +19,15 @@ alias zsho='source_dotfile zshrc'
 alias zshe='edit_dotfile zshrc'
 alias grrn='grep -Rn --exclude-dir=node_modules --'
 
-setopt no_share_history
+#### setopts
+setopt auto_cd # allows changing directory wihout cd
+############
+
 eval "$(direnv hook zsh)"
 
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
-
-# fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # vi-mode. see: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
 VI_MODE_SET_CURSOR=true
@@ -152,6 +152,8 @@ source $ZSH/oh-my-zsh.sh
 #
 
 ############## OH MY ZSH FINISHED #################
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"

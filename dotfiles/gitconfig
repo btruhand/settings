@@ -17,7 +17,7 @@
 	name = Btara Truhandarien
 	email = 10100624+btruhand@users.noreply.github.com
 [core]
-	editor = /usr/local/bin/vim
+	editor = vim
 	autocrlf = input
 [pull]
 	rebase = true

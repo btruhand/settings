@@ -1,4 +1,3 @@
-installers/scripts/build-brew# Install brew
 if [[ ! -x $(which brew) ]]  && should "Detected no brew. Install brew?"; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -79,6 +78,10 @@ fi
 
 if should "Install xsel?"; then
 	brew install xsel
+fi
+
+if should "Install bat? (Rust version of cat)"; then
+	brew install bat
 fi
 
 # brew health checkup

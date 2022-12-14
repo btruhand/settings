@@ -25,3 +25,5 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "$TARGET_HOME/Code/settings/iterm2"
 ## Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+## Configure Mac to NOT close windows when quitting an application
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool true

@@ -1,14 +1,15 @@
 typeset -U PATH
-PATH="$HOME/anaconda3/bin:usr/local/go/bin:$HOME/go/bin:$PATH"
-
-# Added by Toolbox App
-export PATH="/Users/btaratruhandarien/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
-export CDPATH="$HOME:$HOME/Code"
 
 # Set PATH, MANPATH, etc., for Homebrew.
 if type "brew" > /dev/null; then
 	eval "$(brew shellenv)"
 fi
+
+PATH="$HOME/.rbenv/bin:$HOME/anaconda3/bin:usr/local/go/bin:$HOME/go/bin:$PATH"
+
+# Added by Toolbox App
+export PATH="/Users/btaratruhandarien/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
+export CDPATH="$HOME:$HOME/Code"
 
 if type "rbenv" > /dev/null; then
 	eval "$(rbenv init - $SHELL)"

@@ -122,16 +122,6 @@ export LANG="$LC_ALL"
 # setting up direnv
 [[ -x direnv ]] && eval "$(direnv hook bash)"
 
-if [ -z "$ORIGINAL_PATH" ];
-then
-	export ORIGINAL_PATH="$PATH"
-fi
-TO_BE_PATH="$HOME/anaconda3/bin:$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/Cellar:/usr/local/go/bin:$HOME/go/bin:$ORIGINAL_PATH"
-if [[ "$TO_BE_PATH" != "$PATH" ]];
-then
-	export PATH="$TO_BE_PATH"
-fi
-
 if [ -d $HOME/.extras/ ]; then
 	for sourcefiles in $HOME/.extras/*; do
 		source "$sourcefiles"

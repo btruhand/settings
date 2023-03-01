@@ -1,4 +1,5 @@
-if [[ ! -x $(which brew) ]]  && should "Detected no brew. Install brew?"; then
+# Install brew
+if ! is_installed? brew && should "Detected no brew. Install brew?"; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 	# these are setup instructions from the end of the brew install

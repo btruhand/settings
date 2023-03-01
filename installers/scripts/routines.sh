@@ -26,7 +26,7 @@ function get_settings_dir() {
 function is_installed?() {
   local binary
   binary="$1"
-  if [[ $(which $binary) ]]; then
+  if command -v $binary &> /dev/null; then
     return 0
   fi
   return 1

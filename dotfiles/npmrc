@@ -1,2 +1,1 @@
-//verdaccio.faire.team/:_authToken=${VERDACCIO_TOKEN}
-//verdaccio.faire.team/:always-auth=true
+

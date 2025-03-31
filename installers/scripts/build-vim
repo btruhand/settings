@@ -5,14 +5,19 @@
 
 SETTINGS_DIR=$(get_settings_dir)
 
+# nvim config
+
+NVIM_COLORS=$HOME/.config/nvim/colors
+mkdir -p $NVIM_COLORS
+
 # stereokai
 git clone https://github.com/gummesson/stereokai.vim.git ~/.vim/stereokai
-cp -r ~/.vim/stereokai/colors/stereokai.vim ~/.vim/colors/
+cp -r ~/.vim/stereokai/colors/stereokai.vim $NVIM_COLORS
 rm -rf ~/.vim/stereokai
 
 # iceberg
 git clone https://github.com/cocopon/iceberg.vim.git ~/.vim/iceberg
-cp -r ~/.vim/iceberg/colors/iceberg.vim ~/.vim/colors/
+cp -r ~/.vim/iceberg/colors/iceberg.vim $NVIM_COLORS
 rm -rf ~/.vim/iceberg
 
 # Install vim plugins

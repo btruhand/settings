@@ -12,7 +12,7 @@ set number
 if !has('gui_running')
 	set t_Co=256
 endif
-colors iceberg
+colorscheme iceberg
 
 " LEADER
 let mapleader = "."

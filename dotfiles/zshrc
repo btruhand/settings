@@ -23,8 +23,6 @@ alias grrn='grep -Rn --exclude-dir=node_modules --'
 setopt auto_cd # allows changing directory wihout cd
 ############
 
-eval "$(direnv hook zsh)"
-
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
@@ -158,3 +156,5 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"

@@ -14,3 +14,6 @@ export CDPATH="$HOME:$HOME/Code"
 if type "rbenv" > /dev/null; then
 	eval "$(rbenv init - $SHELL)"
 fi
+
+# Created by `pipx` on 2025-04-02 22:15:07
+export PATH="$PATH:/Users/btaratruhandarien/.local/bin"

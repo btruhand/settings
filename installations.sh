@@ -7,9 +7,9 @@ TARGET_HOME="$2"
 VALIDINSTALLSTEPS=(
   ### PROVISION AND BOOTSTRAP MUST BE THE FIRST TWO
   'provision' 'bootstrap'
-  'build-brew' 'build-node' 'build-ruby'
+  'build-brew' 'build-zsh' 'build-node' 'build-ruby'
   'build-python' 'build-go' 'build-vim'
-  'build-zsh' 'build-aws' 'security'
+  'build-aws' 'security'
   'build-docker'
 )
 
@@ -42,13 +42,14 @@ else
 fi
 
 source ./installers/scripts/routines.sh
+
 for STEP in "${INSTALL[@]}"; do
 	echo "**************************************"
 	echo "******** RUNNING SCRIPT $STEP ********"
 	echo "**************************************"
 
 	if should "Run installer $STEP?"; then
-		source $(pwd)/installers/scripts/$STEP $(pwd) "$2"
+		/bin/bash -i -c "source ./installers/scripts/routines.sh && source $(pwd)/installers/scripts/$STEP $(pwd) $2"
 	fi
 
 	echo "**************************************"

@@ -1,0 +1,282 @@
+{
+    // typescript settings
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.suggest.autoImports": true,
+    /////////////////////
+    // editor settings
+    "editor.tabSize": 4,
+    "editor.snippetSuggestions": "top",
+    "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.renderWhitespace": "boundary",
+    "editor.cursorStyle": "line-thin",
+    "editor.multiCursorModifier": "alt",
+    "editor.wordWrap": "on",
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.accessibilitySupport": "off",
+    "editor.acceptSuggestionOnEnter": "on",
+    "editor.autoIndent": "advanced",
+    "editor.codeLens": true,
+    "editor.colorDecorators": true,
+    "editor.cursorBlinking": "smooth",
+    "editor.detectIndentation": true,
+    "editor.dragAndDrop": true,
+    "editor.wrappingIndent": "indent",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.tabCompletion": "on",
+    "editor.suggest.localityBonus": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "addMissingImports": "explicit",
+        "source.fixAll": "explicit",
+        "source.format": "explicit"
+    },
+    /////////////
+    "files.autoSave": "off",
+    "files.exclude": {
+        "**/.DS_Store": true,
+        "**/.DS_STORE": true,
+        "**/.git": true,
+        "**/node_modules/**": true,
+        "**/.trunk/*actions/": true,
+        "**/.trunk/*logs/": true,
+        "**/.trunk/*notifications/": true,
+        "**/.trunk/*out/": true,
+        "**/.trunk/*plugins/": true
+    },
+    "scm.diffDecorations": "gutter",
+    "scm.providerCountBadge": "auto",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.renderIndicators": true,
+    "diffEditor.renderSideBySide": true,
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.insertSpaces": true,
+        "editor.formatOnType": true
+    },
+    "[json]": {
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.insertSpaces": true
+    },
+    "[typescript]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true
+    },
+    "[html]": {
+        "editor.tabSize": 2
+    },
+    "[cpp]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "[shellscript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "workbench.editor.closeOnFileDelete": false,
+    "javascript.preferences.quoteStyle": "single",
+    "typescript.preferences.quoteStyle": "single",
+    "autoDocstring.docstringFormat": "sphinx",
+    "terminal.integrated.shell.osx": "/usr/local/bin/bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.profiles.osx": {
+        "zsh": {
+            "path": "/bin/zsh",
+            "args": [
+                "-l"
+            ],
+            "icon": "star"
+        }
+    },
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.explorerKind": "external",
+    "breadcrumbs.enabled": true,
+    "workbench.colorTheme": "Default Dark Modern",
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/.hg/store/**": true,
+        "**/.trunk/*actions/": true,
+        "**/.trunk/*logs/": true,
+        "**/.trunk/*notifications/": true,
+        "**/.trunk/*out/": true,
+        "**/.trunk/*plugins/": true
+    },
+    "workbench.editor.highlightModifiedTabs": true,
+    "files.associations": {
+        "Dockerfile-server": "dockerfile",
+        "Dockerfile-streaming": "dockerfile",
+        "Dockerfile-rabbitmq": "dockerfile",
+        "Dockerfile-spark": "dockerfile",
+        "Dockerfile-spark-app": "dockerfile",
+        "Dockerfile-spark-worker": "dockerfile",
+        "Dockerfile-kafka": "dockerfile"
+    },
+    "merge-conflict.codeLens.enabled": true,
+    "git.autofetch": true,
+    "editor.suggestSelection": "first",
+    "editor.parameterHints.enabled": true,
+    "terminal.integrated.inheritEnv": false,
+    // vim setup
+    "vim.useSystemClipboard": true,
+    "vim.foldfix": true,
+    "vim.surround": true,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "block-outline",
+    "vim.cursorStylePerMode.replace": "line",
+    "vim.cursorStylePerMode.visual": "line-thin",
+    "vim.cursorStylePerMode.visualblock": "underline",
+    "vim.overrideCopy": false,
+    "vim.easymotion": true,
+    "vim.easymotionMarkerBackgroundColor": "#2D3BEC",
+    "vim.easymotionMarkerForegroundColorOneChar": "#34eb5c",
+    "vim.easymotionMarkerForegroundColorTwoCharSecond": "#eb4034",
+    "vim.leader": ".",
+    "vim.argumentObjectOpeningDelimiters": [
+        "(",
+        "[",
+        "{"
+    ],
+    "vim.camelCaseMotion.enable": true,
+    "vim.argumentObjectClosingDelimiters": [
+        ")",
+        "]",
+        "}"
+    ],
+    "vim.easymotionDimBackground": true,
+    "workbench.editor.enablePreview": false,
+    "git.autoStash": true,
+    "python.languageServer": "Pylance",
+    "shellformat.path": "/Users/btaratruhandarien/go/bin/shfmt",
+    "bashIde.explainshellEndpoint": "http://localhost:5050",
+    "[dockerfile]": {
+        "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+    },
+    "settingsSync.ignoredSettings": [
+        "terminal.integrated.shell.osx",
+        "shellformat.path",
+        "terminal.external.osxExec",
+        "nix.serverPath",
+        "nix.formatterPath",
+        "nix.serverSettings",
+    ],
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    "workbench.panel.defaultLocation": "bottom",
+    "workbench.statusBar.visible": true,
+    "terminal.integrated.enableFileLinks": false,
+    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.editor.decorations.badges": true,
+    "workbench.editor.decorations.colors": true,
+    "explorer.decorations.badges": false,
+    "workbench.editor.wrapTabs": true,
+    "yaml.schemas": {
+        "file:///Users/btaratruhandarien/.cursor/extensions/atlassian.atlascode-3.8.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
+    },
+    "atlascode.bitbucket.enabled": false,
+    "atlascode.jira.jqlList": [
+        {
+            "id": "a43c9d1d-c133-4dbc-93d8-c8ef7728cdb2",
+            "enabled": true,
+            "name": "My nestwealth Issues",
+            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
+            "siteId": "a413c2c9-ecd6-43c6-ba88-bc7333b55bb5",
+            "monitor": true
+        }
+    ],
+    "atlascode.jira.statusbar.enabled": true,
+    "atlascode.jira.todoIssues.enabled": true,
+    "atlascode.jira.explorer.nestSubtasks": true,
+    "files.insertFinalNewline": true,
+    "editor.stickyTabStops": true,
+    "eslint.validate": [
+        "javascript",
+        "typescript"
+    ],
+    "gitlens.blame.format": "${message|100?} ${agoOrDate|14-}",
+    "git.inputValidationSubjectLength": 100,
+    "eslint.format.enable": true,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "redhat.telemetry.enabled": false,
+    "editor.bracketPairColorization.enabled": true,
+    "python.defaultInterpreterPath": "/Users/btaratruhandarien/Documents/SFU_studies/courses/CMPT825/nlpclass-1201-g-linguatech2020/hw1/venv/bin/python",
+    "nix.serverPath": "nil",
+    "nix.enableLanguageServer": true,
+    "nix.serverSettings": {
+        "nil": {
+            "formatting": {
+                "command": [
+                    "nixpkgs-fmt"
+                ]
+            }
+        }
+    },
+    "nix.formatterPath": "nixpkgs-fmt",
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.inlineSuggest.enabled": true,
+    "jupyter.interactiveWindow.textEditor.executeSelection": false,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+    "github.copilot.advanced": {
+        "debug.showScores": true,
+        "length": 500,
+        "temperature": "0.5",
+        "top_p": 0.9
+    },
+    "gitlens.ai.experimental.openai.model": "gpt-4-1106-preview",
+    "editor.inlineSuggest.showToolbar": "always",
+    "notebook.stickyScroll.enabled": true,
+    "editor.stickyScroll.enabled": true,
+    "terminal.integrated.stickyScroll.enabled": true,
+    "editor.stickyScroll.maxLineCount": 10,
+    "editor.stickyScroll.defaultModel": "indentationModel",
+    "prettier.semi": false,
+    "javascript.format.semicolons": "remove",
+    "explorer.autoReveal": false,
+    "notebook.output.textLineLimit": 500,
+    "notebook.lineNumbers": "on",
+    "accessibility.underlineLinks": true,
+    "github.copilot.chat.scopeSelection": true,
+    "workbench.colorCustomizations": {
+        "editorGhostText.border": "#ffffff",
+        "editorGhostText.foreground": "#8630B1",
+    },
+    "python.diagnostics.sourceMapsEnabled": true,
+    "python.missingPackage.severity": "Warning",
+    "python.analysis.autoFormatStrings": true,
+    "python.analysis.autoImportCompletions": true,
+    "python.testing.cwd": "",
+    "[terraform]": {
+        "editor.defaultFormatter": "hashicorp.terraform"
+    },
+    // open-in-github extension
+    "openInGitHub.github.protocol": "https", // Custom URL protocol
+    "openInGitHub.github.domain": "github.com", // Custom GitHub domain
+    "openInGitHub.remote.name": "origin", // Name of the remote repository
+    "openInGitHub.useLocalDomain": true, // Use the local domain instead of the fixed github domain
+    "openInGitHub.useLocalBranch": false, // Use the local branch instead of the fixed remote branch
+    "openInGitHub.useLocalRange": true, // Highlight the local selection range, if there's one
+    "openInGitHub.useLocalLine": false,
+    "cursor.composer.shouldAllowCustomModes": true,
+    "cursor.composer.shouldChimeAfterChatFinishes": true // Highlight the local line if there's no selection range
+}

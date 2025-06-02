@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+SETTINGS_DIR=$(get_settings_dir)
+CONFIG_DIR="$SETTINGS_DIR/configurations/vscode"
+CURSOR_CONFIG_DIR="$SETTINGS_DIR/configurations/cursor"
+
+if should "install vscode?"; then
+    echo "Please install VSCode by going to https://code.visualstudio.com/download"
+    read -p "Have you installed VSCode? (y/n): " vscode_installed
+    if [ "$vscode_installed" != "y" ]; then
+        echo "Please install VSCode and run this script again."
+        exit 1
+    fi
+
+    # Symlink VSCode settings
+    echo "Symlinking VSCode settings and keybindings..."
+    mkdir -p "$HOME/Library/Application\ Support/Code/User"
+    ln -sf "$CONFIG_DIR/settings.json" "$HOME/Library/Application Support/Code/User/settings.json"
+fi
+
+if should "install cursor?"; then
+    echo "Please install Cursor by going to https://www.cursor.com/download"
+    read -p "Have you installed Cursor? (y/n): " cursor_installed
+    if [ "$cursor_installed" != "y" ]; then
+        echo "Please install Cursor and run this script again."
+        exit 1
+    fi
+
+    echo "Symlinking Cursor settings..."
+    mkdir -p "$HOME/Library/Application\ Support/Cursor/User"
+    ln -sf "$CONFIG_DIR/settings.json" "$HOME/Library/Application Support/Cursor/User/settings.json"
+    ln -sf "$CONFIG_DIR/keybindings.json" "$HOME/Library/Application Support/Cursor/User/keybindings.json"
+
+    # Install cron job for syncing extensions
+    if ! is_installed? "cursor"; then
+        echo "Cursor is not installed, skipping extensions sync cron job..."
+        exit 0
+    fi
+
+    echo "Setting up Cursor extensions sync cron job..."
+
+    TEMP_CRON=$(mktemp)
+    CRON_FILE="$CURSOR_CONFIG_DIR/extensions-sync.cron"
+    # Export existing crontab
+    crontab -l >"$TEMP_CRON" 2>/dev/null || echo "" >"$TEMP_CRON"
+
+    # Check if the cron job already exists
+    if ! grep -q "sync-extensions.sh" "$TEMP_CRON"; then
+        # Add our new cron job
+        cat "$CURSOR_CONFIG_DIR/extensions-sync.cron" >>"$TEMP_CRON"
+        # Install new crontab
+        crontab "$TEMP_CRON"
+        echo "Cron job installed successfully!"
+    else
+        echo "Cron job already exists, skipping..."
+    fi
+
+    echo "Current crontab:"
+    crontab -l
+    # Clean up
+    rm "$TEMP_CRON"
+fi

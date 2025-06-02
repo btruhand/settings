@@ -1,0 +1,260 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "alt+cmd+left",
+        "command": "workbench.action.previousEditor",
+        "when": "inputFocus && !terminalFocus"
+    },
+    {
+        "key": "alt+cmd+left",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "shift+cmd+[",
+        "command": "-workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "workbench.action.nextEditor",
+        "when": "inputFocus && !terminalFocus"
+    },
+    {
+        "key": "alt+cmd+right",
+        "command": "-workbench.action.nextEditor"
+    },
+    {
+        "key": "cmd+9",
+        "command": "-workbench.action.lastEditorInGroup"
+    },
+    {
+        "key": "alt+cmd+up",
+        "command": "workbench.action.toggleEditorGroupLayout"
+    },
+    {
+        "key": "alt+cmd+0",
+        "command": "-workbench.action.toggleEditorGroupLayout"
+    },
+    {
+        "key": "shift+cmd+left",
+        "command": "workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "cmd+k cmd+left",
+        "command": "-workbench.action.focusLeftGroup"
+    },
+    {
+        "key": "shift+cmd+up",
+        "command": "workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "cmd+k cmd+up",
+        "command": "-workbench.action.focusAboveGroup"
+    },
+    {
+        "key": "shift+cmd+down",
+        "command": "workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "cmd+k cmd+down",
+        "command": "-workbench.action.focusBelowGroup"
+    },
+    {
+        "key": "shift+cmd+right",
+        "command": "workbench.action.focusRightGroup"
+    },
+    {
+        "key": "cmd+k cmd+right",
+        "command": "-workbench.action.focusRightGroup"
+    },
+    {
+        "key": "cmd+s down",
+        "command": "workbench.action.splitEditorDown"
+    },
+    {
+        "key": "cmd+s left",
+        "command": "workbench.action.splitEditorLeft"
+    },
+    {
+        "key": "cmd+s right",
+        "command": "workbench.action.splitEditorRight"
+    },
+    {
+        "key": "cmd+s up",
+        "command": "workbench.action.splitEditorUp"
+    },
+    {
+        "key": "cmd+r",
+        "command": "workbench.action.tasks.runTask"
+    },
+    {
+        "key": "shift+cmd+r",
+        "command": "workbench.action.reloadWindow"
+    },
+    {
+        "key": "cmd+g cmd+i",
+        "command": "git.ignore",
+        "when": "editorFocus && resourceIsFile"
+    },
+    {
+        "key": "cmd+g up",
+        "command": "workbench.action.newGroupAbove"
+    },
+    {
+        "key": "cmd+g down",
+        "command": "workbench.action.newGroupBelow"
+    },
+    {
+        "key": "cmd+g left",
+        "command": "workbench.action.newGroupLeft"
+    },
+    {
+        "key": "cmd+g right",
+        "command": "workbench.action.newGroupRight"
+    },
+    {
+        "key": "shift+alt+t",
+        "command": "workbench.action.terminal.focus"
+    },
+    {
+        "key": "shift+alt+e",
+        "command": "workbench.action.focusActiveEditorGroup"
+    },
+    {
+        "key": "alt+cmd+n",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "alt+cmd+b",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+cmd+r",
+        "command": "gitlens.showRepositoriesView"
+    },
+    {
+        "key": "cmd+s s",
+        "command": "workbench.action.files.save"
+    },
+    {
+        "key": "cmd+s",
+        "command": "-workbench.action.files.save"
+    },
+    {
+        "key": "ctrl+cmd+=",
+        "command": "workbench.action.newWindowTab"
+    },
+    {
+        "key": "alt+f",
+        "command": "search.action.openNewEditorToSide"
+    },
+    {
+        "key": "cmd+m cmd+right",
+        "command": "workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "cmd+k shift+cmd+right",
+        "command": "-workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "cmd+m cmd+left",
+        "command": "workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "cmd+k shift+cmd+left",
+        "command": "-workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "alt+.",
+        "command": "editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+.",
+        "command": "-editor.action.quickFix",
+        "when": "editorHasCodeActionsProvider && editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "cmd+shift+h",
+        "command": "workbench.action.terminal.newWithCwd",
+        "args": {
+            "cwd": "${fileDirname}"
+        }
+    },
+    {
+        "key": "cmd+k cmd+p",
+        "command": "workbench.action.pinEditor",
+        "when": "!activeEditorIsPinned"
+    },
+    {
+        "key": "cmd+k shift+enter",
+        "command": "-workbench.action.pinEditor",
+        "when": "!activeEditorIsPinned"
+    },
+    {
+        "key": "alt+cmd+e",
+        "command": "workbench.files.action.showActiveFileInExplorer"
+    },
+    {
+        "key": "ctrl+cmd+e",
+        "command": "github.copilot.terminal.explainTerminalSelectionContextMenu"
+    },
+    {
+        "key": "alt+q c",
+        "command": "workbench.action.openQuickChat.copilot"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "workbench.action.openChat.copilot"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "notebook.cell.moveUp",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "alt+up",
+        "command": "-notebook.cell.moveUp",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "notebook.cell.moveDown",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "-notebook.cell.moveDown",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "alt+h",
+        "command": "editor.showTypeHierarchy",
+        "when": "editorHasTypeHierarchyProvider"
+    },
+    {
+        "key": "alt+h",
+        "command": "references-view.showTypeHierarchy",
+        "when": "editorHasTypeHierarchyProvider && editorTextFocus && !inReferenceSearchEditor"
+    },
+    {
+        "key": "alt+h",
+        "command": "git.viewFileHistory",
+        "when": "!editorTextFocus"
+    },
+    {
+        "key": "alt+h",
+        "command": "-git.viewFileHistory"
+    },
+    {
+        "key": "cmd+i",
+        "command": "aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    },
+    {
+        "key": "cmd+k",
+        "command": "-aipopup.action.modal.generate",
+        "when": "editorFocus && !composerBarIsVisible"
+    }
+]

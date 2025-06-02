@@ -10,7 +10,7 @@ VALIDINSTALLSTEPS=(
   'build-brew' 'build-zsh' 'build-node' 'build-ruby'
   'build-python' 'build-go' 'build-vim'
   'build-aws' 'security'
-  'build-docker'
+  'build-docker' 'build-vscode'
 )
 
 is_single_install_valid() {
@@ -27,33 +27,33 @@ print_usage() {
   echo "                  build-git, build-node, build-ruby"
   echo "                  build-conda, build-vim, build-python, build-go"
   echo "                  build-zsh, build-aws, security"
+  echo "                  build-docker, build-vscode"
   return 1
 }
 
-if [ -z $INSTALL ];
-then
-  INSTALL=( "${VALIDINSTALLSTEPS[@]}" )
+if [ -z $INSTALL ]; then
+  INSTALL=("${VALIDINSTALLSTEPS[@]}")
 else
   if ! is_single_install_valid; then
     print_usage
     exit 1
   fi
-  INSTALL=( $INSTALL )
+  INSTALL=($INSTALL)
 fi
 
 source ./installers/scripts/routines.sh
 
 for STEP in "${INSTALL[@]}"; do
-	echo "**************************************"
-	echo "******** RUNNING SCRIPT $STEP ********"
-	echo "**************************************"
+  echo "**************************************"
+  echo "******** RUNNING SCRIPT $STEP ********"
+  echo "**************************************"
 
-	if should "Run installer $STEP?"; then
-		/bin/bash -i -c "source ./installers/scripts/routines.sh && source $(pwd)/installers/scripts/$STEP $(pwd) $2"
-	fi
+  if should "Run installer $STEP?"; then
+    /bin/bash -i -c "source ./installers/scripts/routines.sh && source $(pwd)/installers/scripts/$STEP $(pwd) $2"
+  fi
 
-	echo "**************************************"
-	echo "********* DONE SCRIPT $STEP **********"
-	echo "**************************************"
-	echo
+  echo "**************************************"
+  echo "********* DONE SCRIPT $STEP **********"
+  echo "**************************************"
+  echo
 done

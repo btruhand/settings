@@ -1,0 +1,2 @@
+# Sync Cursor extensions daily at 12:00 PM
+0 12 * * * $HOME/Code/settings/configurations/cursor/sync-extensions.sh

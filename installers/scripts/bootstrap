@@ -7,7 +7,11 @@ SETTINGS_DIR=$(cd $(dirname $0) && pwd)
 TARGET_HOME="${2:-$HOME}"
 
 for DOTFILE in $SETTINGS_DIR/dotfiles/*; do
-  ln -sf "$DOTFILE" "$TARGET_HOME"/.$(basename $DOTFILE)
+	if [[ $(basename $DOTFILE) == "gitconfig" ]]; then
+		cp "$DOTFILE" "$TARGET_HOME"/.$(basename $DOTFILE)
+	else
+		ln -sf "$DOTFILE" "$TARGET_HOME"/.$(basename $DOTFILE)
+	fi
 done
 
 # see: https://github.com/creationix/nvm#default-global-packages-from-file-while-installing

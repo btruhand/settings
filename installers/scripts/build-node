@@ -7,7 +7,7 @@ if should "Install nvm?";
 then
   [ -d ~/.nvm ] && rm -rf ~/.nvm
   git clone --depth 1 --branch master https://github.com/creationix/nvm.git ~/.nvm
-  cd ~/.nvm && . nvm.sh
+  . ~/.nvm/nvm.sh
 fi
 
 if should "Redeploy default packages?";

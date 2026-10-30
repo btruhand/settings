@@ -1,6 +1,12 @@
+#!/usr/bin/env bash
+
 if is_installed? 'brew'; then
 	set -e
-	brew install --cask docker
+	if should "Install with cask?"; then
+		brew install --cask docker
+	else
+		brew install docker
+	fi
 	open /Applications/Docker.app
 	set +e
 else

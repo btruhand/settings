@@ -1,13 +1,15 @@
 # Install brew
+
+SETTINGS_DIR=$(get_settings_dir)
+
 if ! is_installed? brew && should "Detected no brew. Install brew?"; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 	# these are setup instructions from the end of the brew install
-	echo '# Set PATH, MANPATH, etc., for Homebrew.' >> $HOME/.zprofile
-	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> $HOME/.zprofile
+	echo '# Set PATH, MANPATH, etc., for Homebrew.' >>$HOME/.zprofile
+	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
 	source ~/.zprofile
 fi
-
 
 # brew install coreutils
 if should "Install coreutils?"; then
@@ -66,6 +68,8 @@ fi
 # brew direnv
 if should "Install direnv?"; then
 	brew install direnv
+	mkdir -p $HOME/.config/direnv
+	ln -sf $SETTINGS_DIR/direnv/direnvrc $HOME/.config/direnv/direnvrc
 fi
 
 if should "Install fzf?"; then
@@ -86,4 +90,5 @@ if should "Install bat? (Rust version of cat)"; then
 fi
 
 # brew health checkup
+echo "Checking brew health through brew doctor..."
 brew doctor

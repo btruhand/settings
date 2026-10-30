@@ -1,10 +1,10 @@
 {
-    // typescript settings
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "typescript.preferences.importModuleSpecifier": "non-relative",
-    "typescript.suggest.autoImports": true,
-    /////////////////////
-    // editor settings
+    "js/ts.updateImportsOnFileMove.enabled": "always",
+    "js/ts.preferences.importModuleSpecifier": "non-relative",
+    "js/ts.suggest.autoImports": true,
+    "js/ts.tsdk.path": "./node_modules/typescript/lib",
+    "js/ts.preferences.quoteStyle": "single",
+    "js/ts.format.semicolons": "remove",
     "editor.tabSize": 4,
     "editor.snippetSuggestions": "top",
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
@@ -34,7 +34,6 @@
         "source.fixAll": "explicit",
         "source.format": "explicit"
     },
-    /////////////
     "files.autoSave": "off",
     "files.exclude": {
         "**/.DS_Store": true,
@@ -55,25 +54,37 @@
     "[javascript]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        // "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[python]": {
         "editor.tabSize": 4,
         "editor.insertSpaces": true,
-        "editor.formatOnType": true
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            // "source.fixAll": "explicit",
+            // "source.format": "explicit",
+            "source.unusedImports": "explicit"
+        },
+        "editor.showUnused": true,
+        "editor.inlayHints.enabled": "on"
     },
     "[json]": {
         "editor.quickSuggestions": {
             "strings": true
         },
-        "editor.insertSpaces": true
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[typescript]": {
         "editor.tabSize": 2,
-        "editor.insertSpaces": true
+        "editor.insertSpaces": true,
+        "editor.defaultFormatter": "oxc.oxc-vscode"
     },
     "[html]": {
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.html-language-features",
     },
     "[cpp]": {
         "editor.insertSpaces": true,
@@ -85,10 +96,7 @@
         "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "workbench.editor.closeOnFileDelete": false,
-    "javascript.preferences.quoteStyle": "single",
-    "typescript.preferences.quoteStyle": "single",
     "autoDocstring.docstringFormat": "sphinx",
-    "terminal.integrated.shell.osx": "/usr/local/bin/bash",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.profiles.osx": {
         "zsh": {
@@ -102,7 +110,7 @@
     "terminal.external.osxExec": "iTerm.app",
     "terminal.explorerKind": "external",
     "breadcrumbs.enabled": true,
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Dark Modern",
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
@@ -127,8 +135,7 @@
     "git.autofetch": true,
     "editor.suggestSelection": "first",
     "editor.parameterHints.enabled": true,
-    "terminal.integrated.inheritEnv": false,
-    // vim setup
+    "terminal.integrated.inheritEnv": true,
     "vim.useSystemClipboard": true,
     "vim.foldfix": true,
     "vim.surround": true,
@@ -157,44 +164,29 @@
     "vim.easymotionDimBackground": true,
     "workbench.editor.enablePreview": false,
     "git.autoStash": true,
-    "python.languageServer": "Pylance",
+    "python.languageServer": "None",
     "shellformat.path": "/Users/btaratruhandarien/go/bin/shfmt",
     "bashIde.explainshellEndpoint": "http://localhost:5050",
     "[dockerfile]": {
         "editor.defaultFormatter": "ms-azuretools.vscode-docker"
     },
     "settingsSync.ignoredSettings": [
-        "terminal.integrated.shell.osx",
         "shellformat.path",
         "terminal.external.osxExec",
         "nix.serverPath",
         "nix.formatterPath",
-        "nix.serverSettings",
+        "nix.serverSettings"
     ],
-    "typescript.tsdk": "./node_modules/typescript/lib",
     "workbench.panel.defaultLocation": "bottom",
     "workbench.statusBar.visible": true,
-    "terminal.integrated.enableFileLinks": false,
-    "javascript.preferences.importModuleSpecifier": "non-relative",
+    "terminal.integrated.enableFileLinks": "on",
     "emmet.triggerExpansionOnTab": true,
     "workbench.editor.decorations.badges": true,
     "workbench.editor.decorations.colors": true,
     "explorer.decorations.badges": false,
     "workbench.editor.wrapTabs": true,
-    "yaml.schemas": {
-        "file:///Users/btaratruhandarien/.cursor/extensions/atlassian.atlascode-3.8.2/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml"
-    },
     "atlascode.bitbucket.enabled": false,
-    "atlascode.jira.jqlList": [
-        {
-            "id": "a43c9d1d-c133-4dbc-93d8-c8ef7728cdb2",
-            "enabled": true,
-            "name": "My nestwealth Issues",
-            "query": "assignee = currentUser() AND resolution = Unresolved ORDER BY lastViewed DESC",
-            "siteId": "a413c2c9-ecd6-43c6-ba88-bc7333b55bb5",
-            "monitor": true
-        }
-    ],
+    "atlascode.jira.jqlList": [],
     "atlascode.jira.statusbar.enabled": true,
     "atlascode.jira.todoIssues.enabled": true,
     "atlascode.jira.explorer.nestSubtasks": true,
@@ -206,14 +198,15 @@
     ],
     "gitlens.blame.format": "${message|100?} ${agoOrDate|14-}",
     "git.inputValidationSubjectLength": 100,
-    "eslint.format.enable": true,
+    // "eslint.format.enable": true,
     "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+        "*.copilotmd": "vscode.markdown.preview.editor",
+        "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+        "*.ipynb": "jupyter-notebook",
+        "*.docx": "default"
     },
-    "javascript.updateImportsOnFileMove.enabled": "always",
     "redhat.telemetry.enabled": false,
     "editor.bracketPairColorization.enabled": true,
-    "python.defaultInterpreterPath": "/Users/btaratruhandarien/Documents/SFU_studies/courses/CMPT825/nlpclass-1201-g-linguatech2020/hw1/venv/bin/python",
     "nix.serverPath": "nil",
     "nix.enableLanguageServer": true,
     "nix.serverSettings": {
@@ -251,7 +244,6 @@
     "editor.stickyScroll.maxLineCount": 10,
     "editor.stickyScroll.defaultModel": "indentationModel",
     "prettier.semi": false,
-    "javascript.format.semicolons": "remove",
     "explorer.autoReveal": false,
     "notebook.output.textLineLimit": 500,
     "notebook.lineNumbers": "on",
@@ -259,7 +251,7 @@
     "github.copilot.chat.scopeSelection": true,
     "workbench.colorCustomizations": {
         "editorGhostText.border": "#ffffff",
-        "editorGhostText.foreground": "#8630B1",
+        "editorGhostText.foreground": "#8630B1"
     },
     "python.diagnostics.sourceMapsEnabled": true,
     "python.missingPackage.severity": "Warning",
@@ -269,14 +261,83 @@
     "[terraform]": {
         "editor.defaultFormatter": "hashicorp.terraform"
     },
-    // open-in-github extension
-    "openInGitHub.github.protocol": "https", // Custom URL protocol
-    "openInGitHub.github.domain": "github.com", // Custom GitHub domain
-    "openInGitHub.remote.name": "origin", // Name of the remote repository
-    "openInGitHub.useLocalDomain": true, // Use the local domain instead of the fixed github domain
-    "openInGitHub.useLocalBranch": false, // Use the local branch instead of the fixed remote branch
-    "openInGitHub.useLocalRange": true, // Highlight the local selection range, if there's one
-    "openInGitHub.useLocalLine": false,
+    "openInGitHub.github.protocol": "https",
+    "openInGitHub.github.domain": "github.com",
+    "openInGitHub.remote.name": "origin",
+    "openInGitHub.useLocalDomain": true,
+    "openInGitHub.useLocalBranch": false,
+    "openInGitHub.useLocalRange": true,
+    "openInGitHub.useLocalLine": true,
+    "openInGitHub.remote.branch": "main",
+    "python.experiments.enabled": true,
     "cursor.composer.shouldAllowCustomModes": true,
-    "cursor.composer.shouldChimeAfterChatFinishes": true // Highlight the local line if there's no selection range
+    "cursor.composer.shouldChimeAfterChatFinishes": true,
+    "cursorpyright.analysis.autoImportCompletions": true,
+    "cursor.composer.collapsePaneInputBoxPills": true,
+    "cursor.terminal.usePreviewBox": true,
+    "search.useIgnoreFiles": false,
+    "window.commandCenter": true,
+    "cursor.cpp.disabledLanguages": [
+        "scminput"
+    ],
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "workbench.activityBar.location": "top",
+    "python.analysis.inlayHints.callArgumentNames": "all",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.useEnvironmentsExtension": true,
+    "workbench.secondarySideBar.defaultVisibility": "visible",
+    "git.blame.statusBarItem.enabled": false,
+    "python.defaultInterpreterPath": "/opt/homebrew/bin/python3.13",
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml"
+    },
+    "python.terminal.shellIntegration.enabled": true,
+    "python.analysis.supportAllPythonDocuments": true,
+    "githubPullRequests.pullBranch": "never",
+    "diffEditor.maxComputationTime": 10000,
+    "python.analysis.enableTroubleshootMissingImports": true,
+    "atlascode.jira.lastCreateSiteAndProject": {
+        "siteId": "18504757-1d34-4701-ad17-2e2607d1fa8f",
+        "projectKey": "DOC"
+    },
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "githubPullRequests.pushBranch": "always",
+    "update.mode": "manual",
+    "claudeCode.preferredLocation": "panel",
+    "remote.autoForwardPortsSource": "hybrid",
+    "testing.coverageBarThresholds": {
+        "red": 0,
+        "yellow": 60,
+        "green": 90
+    },
+    "git.confirmSync": false,
+    "atlascode.jira.lastCreatePreSelectedValues": {
+        "siteId": "18504757-1d34-4701-ad17-2e2607d1fa8f",
+        "projectKey": "",
+        "issueTypeId": ""
+    },
+    "atlascode.rovodev.showEntitlementNotifications": false,
+    "terminal.integrated.initialHint": false,
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ],
+    "python.analysis.typeCheckingMode": "standard",
+    "js/ts.tsserver.maxMemory": 8192,
+    "cursor.composer.queueMessageDefaultBehavior": "steer",
+    "js/ts.experimental.useTsgo": true,
 }

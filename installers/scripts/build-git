@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+if should "Create new key?"; then
+  read -p "Enter your email: " email
+  ssh-keygen -t ed25519 -C "$email"
+  chmod 600 ~/.ssh/id_ed25519
+  chmod 644 ~/.ssh/id_ed25519.pub
+  ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+
+  echo "Key created successfully at ~/.ssh/id_ed25519"
+
+  echo "Adding SSH for automatic key usage for GitHub"
+  cat >>~/.ssh/config <<EOF
+Host github.com
+  IdentityFile ~/.ssh/id_ed25519
+  AddKeysToAgent yes
+  UseKeychain yes
+  PreferredAuthentications publickey
+  ForwardAgent yes
+EOF
+
+  cat ~/.ssh/id_ed25519.pub | pbcopy
+
+  echo "Public key copied to clipboard"
+  echo "Please add the public key to GitHub"
+  echo "https://github.com/settings/ssh/new"
+  read -p "Press Enter to continue after adding the key"
+
+  echo "Testing SSH connection"
+  ssh -T git@github.com || echo "SSH connection failed!" && exit 1
+
+  echo "SSH connection successful"
+
+  echo "Adding global git config"
+  git config --global user.email "$email"
+  git config --global user.name "Btara Truhandarien"
+  git config --global pull.rebase true
+  git config --global fetch.prune true
+  git config --global fetch.pruneTags true
+
+  echo "Git config added successfully"
+  echo "Git config:"
+  git config --global --list
+fi

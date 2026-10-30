@@ -13,7 +13,9 @@ PATH="$HOME/.rbenv/bin:$HOME/anaconda3/bin:usr/local/go/bin:$HOME/go/bin:$PATH"
 
 # Added by Toolbox App
 export PATH="/Users/btaratruhandarien/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
-export CDPATH="$HOME:$HOME/Code"
+# Not exported: CDPATH is a zsh shell parameter. Exporting leaks it into child
+# processes (e.g. bash spawned by `npm run`), where it alters `cd` and breaks scripts.
+CDPATH="$HOME:$HOME/Code"
 
 if type "rbenv" > /dev/null; then
 	eval "$(rbenv init - $SHELL)"
@@ -21,3 +23,9 @@ fi
 
 # Created by `pipx` on 2025-04-02 22:15:07
 export PATH="$PATH:/Users/btaratruhandarien/.local/bin"
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Added by OrbStack: command-line tools and integration
+# This won't be added again if you remove it.
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

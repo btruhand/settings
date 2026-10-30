@@ -1,5 +1,5 @@
 # source bash_profile
-source ~/.bash_profile
+#source ~/.bash_profile
 
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
@@ -151,6 +151,99 @@ source $ZSH/oh-my-zsh.sh
 
 ############## OH MY ZSH FINISHED #################
 
+### CUSTOM SHELL FUNCTIONS
+find_replace () {
+	find . -type f -name "$1" -exec perl -i -pe"s/$2/$3/g" {} +
+}
+git_checkout_branch () {
+	git checkout `git branch | sed -n $1p`
+}
+git_tag () {
+	git tag $1_`date +%Y%m%d%H%M%S` && (git describe --tag --always | xargs git push origin)
+}
+source_dotfile () {
+	link_dotfile $1
+	if [[ $1 == "bash_profile" && -f ~/.bashrc ]]; then
+		source ~/.bashrc
+	else
+		source ~/.$1
+	fi
+}
+link_from_settings() {
+	ln -sFf $SETTINGS_DIR/$1 $2
+}
+link_dotfile () {
+	link_from_settings dotfiles/$1 ~/.$1
+}
+link_config () {
+	link_from_settings configurations/$1 ~/.$1
+}
+edit_setfile () {
+	vim $SETTINGS_DIR/$1
+}
+edit_dotfile () {
+	vim $DOTFILES_DIR/$1
+}
+git_settings () {
+	commit_msg="$1"
+	ori_loc=$(pwd)
+	cd $SETTINGS_DIR
+	git add .
+	git commit -m "$commit_msg"
+	git pb
+	cd $ori_loc
+}
+make_jsctags () {
+	find . -type f -iregex ".*\.js$" -not -path "*/node_modules/*" -exec jsctags {} -f \; | sed '/^$/d' | sort > tags
+}
+uml_diagram () {
+	java -jar ~/Code/tools/plantuml.jar -verbose $1
+}
+partial_rename_files () {
+	local search="$1"
+	local from=$2
+	local to=$3
+	local mode=$4
+	if [[ ! -z $mode && $mode != "global" && $mode != "local" ]]; then
+		echo "Mode must be global or local"
+		return 1
+	fi
+	for file in $search; do
+		if [[ ${mode:-global} = "global" ]]; then
+			mv $file ${file//$from/$to}
+		else
+			mv $file ${file/$from/$to}
+		fi
+	done
+}
+
+alias fr=find_replace
+alias gitcob=git_checkout_branch
+alias tagtest='git_tag test_Btara'
+alias tagstg='git_tag release_stg'
+alias tagdev='git_tag release_stg'
+alias tagrelease='git_tag release'
+alias so='source_dotfile bash_profile'
+alias sextras='[ -d $HOME/.extras ] && rm -r $HOME/.extras; link_dotfile extras'
+alias se='edit_dotfile bash_profile'
+alias sete=edit_setfile
+alias dote=edit_dotfile
+alias dotcp=link_dotfile
+alias lfromset=link_from_settings
+alias gitset=git_settings
+alias dotso=source_dotfile
+alias mkjstags=make_jsctags
+alias uml=uml_diagram
+alias prename=partial_rename_files
+alias lconf=link_config
+alias insecurechrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --ignore-certificate-errors'
+
+# some PHP/Apache things
+alias apache='apachectl'
+
+
+### END OF CUSTOM SHELL FUNCTIONS ###
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
@@ -169,4 +262,22 @@ export PATH="$PATH:/Users/btaratruhandarien/.local/bin"
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - zsh)"
-eval "$(pyenv virtualenv-init - zsh)"
+
+# UV
+if command -v uvx >/dev/null; then
+	eval "$(uvx --generate-shell-completion zsh)"
+fi
+
+# Rust (installed through rustup)
+#if [[ -d "$HOME/.cargo/bin" ]]; then
+export PATH="$HOME/.cargo/bin:$PATH"
+#fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc'; fi
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+

@@ -1,5 +1,8 @@
 #!/bin/bash
 
 # make public key
-ssh-keygen -t rsa -b 2048
-ssh-add
+
+if should "Create ed25519 SSH key?"; then
+  ssh-keygen -a 64 -t ed25519
+  ssh-add
+fi

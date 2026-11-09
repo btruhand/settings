@@ -29,7 +29,7 @@ re = amend --no-edit
 cofz = !git co $(git br | fzf)
 [user]
 name = Btara Truhandarien
-	email = btara.truhandarien@evenup.ai
+email = 10100624+btruhand@users.noreply.github.com
 [core]
 editor = vim
 autocrlf = input

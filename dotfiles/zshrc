@@ -18,6 +18,7 @@ alias zshpr='cat ~/.zshrc'
 alias zsho='source_dotfile zshrc'
 alias zshe='edit_dotfile zshrc'
 alias grrn='grep -Rn --exclude-dir=node_modules --'
+alias gcmsg='git commit -m'
 
 #### setopts
 setopt auto_cd # allows changing directory wihout cd

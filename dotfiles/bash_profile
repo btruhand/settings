@@ -112,9 +112,7 @@ alias insecurechrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Ch
 # some PHP/Apache things
 alias apache='apachectl'
 
-if [ -f /usr/local/share/bash-completion/bash_completion ]; then
-	. /usr/local/share/bash-completion/bash_completion
-fi
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 export GRAPHVIZ_DOT="/usr/local/bin/dot"
 

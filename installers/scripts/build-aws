@@ -1,13 +1,6 @@
 if should "Install AWS CLI?"; then
 	if ! is_installed? aws; then
-
-		if [[ $(uname -m) == 'arm64' ]]; then
-			echo "Installing Rosetta2 on detected Apple Silicon"
-			sudo softwareupdate --install-rosetta
-		fi
-
-		curl "https://awscli.amazonaws.com/AWSCLIV2-2.0.30.pkg" -o "$HOME/Downloads/AWSCLIV2.pkg"
-		sudo installer -pkg "$HOME/Downloads/AWSCLIV2.pkg" -target /
+		curl -fsSL https://awscli.amazonaws.com/v2/install.sh | bash
 
 		echo 'Verifying installation'
 		if ! is_installed? aws; then

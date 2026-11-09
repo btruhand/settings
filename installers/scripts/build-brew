@@ -4,91 +4,82 @@ SETTINGS_DIR=$(get_settings_dir)
 
 if ! is_installed? brew && should "Detected no brew. Install brew?"; then
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-	# these are setup instructions from the end of the brew install
-	echo '# Set PATH, MANPATH, etc., for Homebrew.' >>$HOME/.zprofile
-	echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >>$HOME/.zprofile
 	source ~/.zprofile
 fi
 
-# brew install coreutils
+# Below use the full expected /opt/homebrew/bin/brew path in case brew was just installed
+
 if should "Install coreutils?"; then
-	brew install coreutils
+	/opt/homebrew/bin/brew install coreutils
 fi
 
-# Install vim
 if should "Install vim?"; then
-	brew install vim
+	/opt/homebrew/bin/brew install vim
 fi
 
-# Install cmake
 if should "Install cmake?"; then
-	brew install cmake
+	/opt/homebrew/bin/brew install cmake
 fi
-# install java
+
 if should "Install brew java?"; then
-	brew cask install java
+	/opt/homebrew/bin/brew install java
 fi
-# install graphviz (mainly for plantuml)
-## Install libtool
+
 if should "Install libtool?"; then
-	brew install libtool
+	/opt/homebrew/bin/brew install libtool
 fi
-## Install graphviz
+
 if should "Install graphviz?"; then
-	brew install graphviz
+	/opt/homebrew/bin/brew install graphviz
 fi
 
-# install bash from brew
 if should "Install bash?"; then
-	brew install bash
+	/opt/homebrew/bin/brew install bash
 fi
 
-# install bash completion
 if should "Install bash-completion@2"; then
-	brew install bash-completion@2
+	/opt/homebrew/bin/brew install bash-completion@2
 fi
 
 # brew pyenv
-if should "Install pyenv?"; then
-	brew install pyenv
+if should "Install uv?"; then
+	/opt/homebrew/bin/brew install uv
 fi
 
 # brew rbenv
 if should "Install rbenv?"; then
-	brew install rbenv
+	/opt/homebrew/bin/brew install rbenv
 	rbenv init
 fi
 
 # brew shfmt
 if should "Install shfmt?"; then
-	brew install shfmt
+	/opt/homebrew/bin/brew install shfmt
 fi
 
 # brew direnv
 if should "Install direnv?"; then
-	brew install direnv
+	/opt/homebrew/bin/brew install direnv
 	mkdir -p $HOME/.config/direnv
 	ln -sf $SETTINGS_DIR/direnv/direnvrc $HOME/.config/direnv/direnvrc
 fi
 
 if should "Install fzf?"; then
-	brew install fzf
-	$(brew --prefix)/opt/fzf/install
+	/opt/homebrew/bin/brew install fzf
+	$(/opt/homebrew/bin/brew --prefix)/opt/fzf/install
 fi
 
 if should "Install tldr?"; then
-	brew install tldr
+	/opt/homebrew/bin/brew install tldr
 fi
 
 if should "Install xsel?"; then
-	brew install xsel
+	/opt/homebrew/bin/brew install xsel
 fi
 
 if should "Install bat? (Rust version of cat)"; then
-	brew install bat
+	/opt/homebrew/bin/brew install bat
 fi
 
-# brew health checkup
-echo "Checking brew health through brew doctor..."
-brew doctor
+echo "Checking /opt/homebrew/bin/brew health through brew doctor..."
+/opt/homebrew/bin/brew doctor

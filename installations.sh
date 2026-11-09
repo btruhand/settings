@@ -2,7 +2,7 @@
 
 INSTALL=$1
 # assume target home is given as second argument for now
-TARGET_HOME="$2"
+TARGET_HOME="${2:-$HOME}"
 
 VALIDINSTALLSTEPS=(
   ### PROVISION AND BOOTSTRAP MUST BE THE FIRST TWO
@@ -43,13 +43,15 @@ fi
 
 source ./installers/scripts/routines.sh
 
+echo "Target home is: $TARGET_HOME"
+
 for STEP in "${INSTALL[@]}"; do
   echo "**************************************"
   echo "******** RUNNING SCRIPT $STEP ********"
   echo "**************************************"
 
   if should "Run installer $STEP?"; then
-    /bin/bash -i -c "source ./installers/scripts/routines.sh && source $(pwd)/installers/scripts/$STEP $(pwd) $2"
+    source $(pwd)/installers/scripts/$STEP $(pwd) $2
   fi
 
   echo "**************************************"
